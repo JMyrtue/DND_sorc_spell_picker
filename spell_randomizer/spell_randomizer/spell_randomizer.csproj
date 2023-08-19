@@ -7,8 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\Jonathan\Documents\Programmering\DND_sorc_spell_picker\Program.cs" Link="Program.cs" />
-  </ItemGroup>
+  <!--<ItemGroup>
+    <Compile Include="C:\Users\Jonathan\OneDrive\Documents\Gitrepose\DND_sorc_spell_picker\Program.cs" Link="Program.cs" />
+  </ItemGroup>-->
 
 </Project>
