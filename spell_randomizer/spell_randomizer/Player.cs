@@ -3,6 +3,7 @@
     private int level;
     private int cantripsTotal;
     private int spellsTotal;
+    private int spellTableUpperBoundÍndex;
     private Random randomomizer;
 
     public Player()
@@ -10,6 +11,7 @@
         level = 1;
         cantripsTotal = 4;
         spellsTotal = 2;
+        spellTableUpperBoundÍndex = 34;
         randomomizer = new Random();
     }
 
@@ -24,6 +26,7 @@
             level++;
             cantripsTotal = getCantripsTotal();
             spellsTotal = getSpellsTotal();
+            spellTableUpperBoundÍndex = getSpellsIndexUpperBound();
             displayLevel();
         } else
         {
@@ -37,6 +40,8 @@
         { 
             level--;
             cantripsTotal = getCantripsTotal();
+            spellsTotal = getSpellsTotal();
+            spellTableUpperBoundÍndex = getSpellsIndexUpperBound();
             displayLevel();
         } else
         {
@@ -67,66 +72,66 @@
     public void getCantrips()
     {
         var indexList = new List<int>();
-        int temp;
+        int index;
 
         while(indexList.Count < cantripsTotal)
         {
-            temp = randomomizer.Next(30);
-            if (!indexList.Contains(temp))
+            index = randomomizer.Next(30);
+            if (!indexList.Contains(index))
             {
-                indexList.Add(temp);
+                indexList.Add(index);
             }
         }
 
-        foreach (int index in indexList)
+        foreach (int i in indexList)
         {
-            getUniqueCantrip(index + 1);
+            getUniqueCantrip(i + 1);
         }
     }
 
     private void getUniqueCantrip(int index)
     {
         string cantrip = "";
-        switch (index)
+        cantrip = index switch
         {
-            case 1: cantrip = "Acid Splash";break;
-            case 2: cantrip = "Blade Ward"; break;
-            case 3: cantrip = "Booming Blade"; break;
-            case 4: cantrip = "Chill Touch"; break;
-            case 5: cantrip = "Control Flames"; break;
-            case 6: cantrip = "Create Bonfire"; break;
-            case 7: cantrip = "Dancing Lights"; break;
-            case 8: cantrip = "Fire Bolt"; break;
-            case 9: cantrip = "Friends"; break;
-            case 10: cantrip = "Frostbite"; break;
-            case 11: cantrip = "Green-Flame Blade"; break;
-            case 12: cantrip = "Gust"; break;
-            case 13: cantrip = "Infestation"; break;
-            case 14: cantrip = "Light"; break;
-            case 15: cantrip = "Lightning Lure"; break;
-            case 16: cantrip = "Mage Hand"; break;
-            case 17: cantrip = "Mending"; break;
-            case 18: cantrip = "Message"; break;
-            case 19: cantrip = "Mind Sliver"; break;
-            case 20: cantrip = "Minor Illusion"; break;
-            case 21: cantrip = "Mold Earth"; break;
-            case 22: cantrip = "On/Off (UA)"; break;
-            case 23: cantrip = "Poison Spray"; break;
-            case 24: cantrip = "Prestidigitation"; break;
-            case 25: cantrip = "Ray of Frost"; break;
-            case 26: cantrip = "Shape Water"; break;
-            case 27: cantrip = "Shocking Grasp"; break;
-            case 28: cantrip = "Sword Burst"; break;
-            case 29: cantrip = "Thunderclap"; break;
-            case 30: cantrip = "True Strike"; break;
-            default: throw new Exception("Invalid index provided for cantrip retrival");
-        }
+            1 => "Acid Splash",
+            2 => "Blade Ward",
+            3 => "Booming Blade",
+            4 => "Chill Touch",
+            5 => "Control Flames",
+            6 => "Create Bonfire",
+            7 => "Dancing Lights",
+            8 => "Fire Bolt",
+            9 => "Friends",
+            10 => "Frostbite",
+            11 => "Green-Flame Blade",
+            12 => "Gust",
+            13 => "Infestation",
+            14 => "Light",
+            15 => "Lightning Lure",
+            16 => "Mage Hand",
+            17 => "Mending",
+            18 => "Message",
+            19 => "Mind Sliver",
+            20 => "Minor Illusion",
+            21 => "Mold Earth",
+            22 => "On/Off (UA)",
+            23 => "Poison Spray",
+            24 => "Prestidigitation",
+            25 => "Ray of Frost",
+            26 => "Shape Water",
+            27 => "Shocking Grasp",
+            28 => "Sword Burst",
+            29 => "Thunderclap",
+            30 => "True Strike",
+            _ => throw new Exception("Invalid index provided for cantrip retrival"),
+        };
         Console.WriteLine(cantrip);
     }
 
     private int getSpellsTotal()
     {
-        var temp = level switch
+        var totalSpells = level switch
         {
             1 => 2,
             2 => 3,
@@ -144,7 +149,87 @@
             17 or 18 or 19 or 20 => 15,
             _ => throw new Exception("Undefined level"),
         };
-        return temp;
+        return totalSpells;
     }
 
+    private int getSpellsIndexUpperBound()
+    {
+        var indexUpperBound = level switch
+        {
+            1 or 2 => 34,                // 34 1st level spells
+            3 or 4 => 87,                // 53 2nd level spells
+            5 or 6 => 128,               // 41 3rd level spells
+            7 or 8 => 153,               // 25 4th level spells
+            9 or 10 => 178,              // 25 5th level spells
+            11 or 12 => 201,             // 23 6th level spells
+            13 or 14 => 215,             // 14 7th level spells
+            15 or 16 => 222,             // 7 8th level spells
+            17 or 18 or 19 or 20 => 230, // 8 9th level spells
+            _ => throw new Exception("Undefined level for determining index bound of spell retrieval"),
+        };
+        return indexUpperBound;
+    }
+
+    public void getSpells()
+    {
+        var indexList = new List<int>();
+        int index;
+
+        while(indexList.Count < spellsTotal)
+        {
+            index = randomomizer.Next(spellTableUpperBoundÍndex);
+            if (!indexList.Contains(index))
+            {
+                indexList.Add(index);
+            }
+
+        }
+
+        foreach (var i in indexList)
+        {
+            getUniqueSpell(i + 1);
+        }
+    }
+
+    private void getUniqueSpell(int index)
+    {
+        string spell = index switch
+        {
+            1 => "Absorb Elements - Spell level 1",
+            2 => "Acid Stream (UA) - Spell level 1",
+            3 => "Burning Hands - Spell level 1",
+            4 => "Catapult - Spell level 1",
+            5 => "Chaos Bolt - Spell level 1",
+            6 => "Charm Person - Spell level 1",
+            7 => "Chromatic Orb - Spell level 1",
+            8 => "Color Spray - Spell level 1",
+            9 => "Comprehend Languages - Spell level 1",
+            10 => "Detect Magic - Spell level 1",
+            11 => "Disguise Self - Spell level 1",
+            12 => "Distort Value - Spell level 1",
+            13 => "Earth Tremor - Spell level 1",
+            14 => "Expeditious Retreat - Spell level 1",
+            15 => "False Life - Spell level 1",
+            16 => "Feather Fall - Spell level 1",
+            17 => "Fog Cloud - Spell level 1",
+            18 => "Grease - Spell level 1",
+            19 => "Ice Knife - Spell level 1",
+            20 => "Id Insinuation (UA) - Spell level 1",
+            21 => "Infallible Relay (UA) - Spell level 1",
+            22 => "Jump - Spell level 1",
+            23 => "Mage Armor - Spell level 1",
+            24 => "Magic Missile - Spell level 1",
+            25 => "Ray of Sickness - Spell level 1",
+            26 => "Remote Access (UA) - Spell level 1",
+            27 => "Shield - Spell level 1",
+            28 => "Silent Image - Spell level 1",
+            29 => "Silvery Barbs - Spell level 1",
+            30 => "Sleep - Spell level 1",
+            31 => "Sudden Awakening (UA) - Spell level 1",
+            32 => "Tasha's Caustic Brew - Spell level 1",
+            33 => "Thunderwave - Spell level 1",
+            34 => "Witch Bolt - Spell level 1",
+        }; 
+        Console.WriteLine(spell);
+    }
 } 

@@ -3,6 +3,6 @@
     {
         var mig = new Player();
 
-        mig.getCantrips();
+        mig.getSpells();
     }
 }
