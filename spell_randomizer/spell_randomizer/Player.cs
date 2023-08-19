@@ -71,7 +71,7 @@
 
         while(indexList.Count < cantripsTotal)
         {
-            temp = randomomizer.Next(1, 31);
+            temp = randomomizer.Next(30);
             if (!indexList.Contains(temp))
             {
                 indexList.Add(temp);
@@ -80,8 +80,48 @@
 
         foreach (int index in indexList)
         {
-            Console.WriteLine(index);
+            getUniqueCantrip(index + 1);
         }
+    }
+
+    private void getUniqueCantrip(int index)
+    {
+        string cantrip = "";
+        switch (index)
+        {
+            case 1: cantrip = "Acid Splash";break;
+            case 2: cantrip = "Blade Ward"; break;
+            case 3: cantrip = "Booming Blade"; break;
+            case 4: cantrip = "Chill Touch"; break;
+            case 5: cantrip = "Control Flames"; break;
+            case 6: cantrip = "Create Bonfire"; break;
+            case 7: cantrip = "Dancing Lights"; break;
+            case 8: cantrip = "Fire Bolt"; break;
+            case 9: cantrip = "Friends"; break;
+            case 10: cantrip = "Frostbite"; break;
+            case 11: cantrip = "Green-Flame Blade"; break;
+            case 12: cantrip = "Gust"; break;
+            case 13: cantrip = "Infestation"; break;
+            case 14: cantrip = "Light"; break;
+            case 15: cantrip = "Lightning Lure"; break;
+            case 16: cantrip = "Mage Hand"; break;
+            case 17: cantrip = "Mending"; break;
+            case 18: cantrip = "Message"; break;
+            case 19: cantrip = "Mind Sliver"; break;
+            case 20: cantrip = "Minor Illusion"; break;
+            case 21: cantrip = "Mold Earth"; break;
+            case 22: cantrip = "On/Off (UA)"; break;
+            case 23: cantrip = "Poison Spray"; break;
+            case 24: cantrip = "Prestidigitation"; break;
+            case 25: cantrip = "Ray of Frost"; break;
+            case 26: cantrip = "Shape Water"; break;
+            case 27: cantrip = "Shocking Grasp"; break;
+            case 28: cantrip = "Sword Burst"; break;
+            case 29: cantrip = "Thunderclap"; break;
+            case 30: cantrip = "True Strike"; break;
+            default: throw new Exception("Invalid index provided for cantrip retrival");
+        }
+        Console.WriteLine(cantrip);
     }
 
     private int getSpellsTotal()
