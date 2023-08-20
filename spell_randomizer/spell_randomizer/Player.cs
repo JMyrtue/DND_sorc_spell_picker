@@ -1,11 +1,13 @@
 ﻿public class Player {
 
+    private string name;
     private int level;
     private int cantripsTotal;
     private int spellsTotal;
     private int spellTableUpperBoundÍndex;
     private Random randomomizer;
-
+    
+    public string Name{ get { return name; } set { name = value; } }
     public Player()
     {
         level = 1;
@@ -15,9 +17,19 @@
         randomomizer = new Random();
     }
 
+    public void longRest()
+    {
+        Console.WriteLine("The new magical abilities of " + name + " are:\n");
+        Console.WriteLine(">>Cantrips:<<");
+        getCantrips();
+        Console.WriteLine("\n>>Spells:<<");
+        getSpells();
+        Console.WriteLine();
+    }
+
     public void displayLevel()
     {
-        Console.WriteLine("Character is currently level " + level);
+        Console.WriteLine(name + " is now level " + level + "\n");
     }
     public void levelUp()
     {
@@ -59,7 +71,7 @@
         } else if (level >= 4 && level < 10) 
         {
             temp = 5;
-        } else if (level >= 10 &&  level <= 20)
+        } else if (level >= 10 && level <= 20)
         { 
             temp = 6;
         } else
@@ -69,7 +81,7 @@
         return temp;
     }
 
-    public void getCantrips()
+    private void getCantrips()
     {
         var indexList = new List<int>();
         int index;
@@ -170,7 +182,7 @@
         return indexUpperBound;
     }
 
-    public void getSpells()
+    private void getSpells()
     {
         var indexList = new List<int>();
         int index;
