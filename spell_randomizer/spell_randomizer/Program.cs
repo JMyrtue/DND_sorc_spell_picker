@@ -29,14 +29,13 @@ class Program {
                         "ding:                 increases character level\n" +
                         "delevel:              decreases character level\n" +
                         "rest/longrest/sleep:  provides a new set of cantrips and spells\n" +
-                        "quit:                 terminates the program\n" +
-                        "cast:                 casts a spell\n"); break;
+                        "cast:                 casts a spell\n" +
+                        "quit:                 terminates the program\n"
+                        ); break;
 
                 default: Console.WriteLine("No valid input detected - try the \'commands\' input for further info on valid inputs.\n"); break;
             }
 
         }
-        
-
     }
 }

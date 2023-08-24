@@ -8,18 +8,23 @@ public class Player {
     private int spellsTotal;
     private int spellTableUpperBoundÍndex;
     private int wildMagicCounter;
+    private int[] spellSlotsTotal;
+    private int[] spellSlotsUsed;
     private Random randomomizer;
     private MagicManager magicManager;
+
 
 
     public string Name{ get { return name; } set { name = value; } }
     public Player()
     {
         level = 1;
-        cantripsTotal = 4;
-        spellsTotal = 2;
-        spellTableUpperBoundÍndex = 34;
+        cantripsTotal = getCantripsTotal();
+        spellsTotal = getSpellsTotal();
+        spellTableUpperBoundÍndex = getSpellsIndexUpperBound();
         wildMagicCounter = 1;
+        spellSlotsTotal = new int[] { 2, 0, 0, 0, 0, 0, 0, 0, 0 };
+        spellSlotsUsed = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         randomomizer = new Random();
         magicManager = new MagicManager();
     }
@@ -34,6 +39,16 @@ public class Player {
         Console.WriteLine();
 
         wildMagicCounter = 1;
+
+        resetSpellSlots();
+    }
+
+    private void resetSpellSlots()
+    {
+        for (int i = 0; i < spellSlotsUsed.Length; i++)
+        {
+            spellSlotsUsed[i] = 0;
+        }
     }
 
     private void incrementWildMagicCounter()
@@ -43,17 +58,47 @@ public class Player {
 
     public void castSpell()
     {
-        var input = "";
-        Console.WriteLine("Did your spell cast trigger a Wild Magic Surge? (y/n)");
-        while(input != "y" && input != "n")
+        int currentMaxSpell = 0;
+        int highestIndex = spellSlotsTotal.Length;
+
+        while(currentMaxSpell == 0)
         {
-            input = Console.ReadLine();
-            input = input.ToLower();
+            highestIndex--;
+            currentMaxSpell = spellSlotsTotal[highestIndex];
         }
-        if(input == "y")
+        var MaxLevelSpell = highestIndex + 1;
+
+        Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", name, MaxLevelSpell);
+        var spellLevel = Convert.ToInt32(Console.ReadLine());
+
+        while(spellLevel < 0 || spellLevel > MaxLevelSpell)
+        {
+            Console.WriteLine("Invalid spelllevel, must be between 1 and {0} - try again", MaxLevelSpell);
+            spellLevel = Convert.ToInt32(Console.ReadLine());
+        }
+
+        if (spellSlotsUsed[spellLevel - 1] == spellSlotsTotal[spellLevel - 1])
+        {
+            Console.WriteLine("All spell slots used for this level - longrest to gain new spellslots");
+        } else
+        {
+            spellSlotsUsed[spellLevel - 1]++;
+        }
+
+        Console.Clear();
+        var WSinput = "";
+        Console.WriteLine("Your current counter for triggering a Wild Magic Surge is >>{0}<<\n", wildMagicCounter +
+            "Did your spellcast trigger a Wild Magic Surge? (y/n)");
+        while(WSinput != "y" && WSinput != "n")
+        {
+            WSinput = Console.ReadLine();
+            WSinput = WSinput.ToLower();
+        }
+        if(WSinput == "y")
         {
             wildMagicCounter = 1;
-        } else if (input == "n"){
+            Console.WriteLine("Magic Magic counter have been reset");
+        } else if (WSinput == "n"){
             incrementWildMagicCounter();
         } else
         {
@@ -74,6 +119,7 @@ public class Player {
             cantripsTotal = getCantripsTotal();
             spellsTotal = getSpellsTotal();
             spellTableUpperBoundÍndex = getSpellsIndexUpperBound();
+            setSpellSlots();
             displayLevel();
         } else
         {
@@ -89,6 +135,7 @@ public class Player {
             cantripsTotal = getCantripsTotal();
             spellsTotal = getSpellsTotal();
             spellTableUpperBoundÍndex = getSpellsIndexUpperBound();
+            setSpellSlots();
             displayLevel();
         } else
         {
@@ -157,6 +204,84 @@ public class Player {
             _ => throw new Exception("Undefined level"),
         };
         return totalSpells;
+    }
+
+    private void setSpellSlots()
+    {
+        switch (level) //Each case shortend to only change the spell slots, that could be affected from leveling up or down
+        {
+            case 1:
+                spellSlotsTotal[0] = 2;
+                break;
+            case 2:
+                spellSlotsTotal[0] = 3;
+                spellSlotsTotal[1] = 0;
+                break;
+            case 3:
+                spellSlotsTotal[0] = 4;
+                spellSlotsTotal[1] = 2;
+                break;
+            case 4:
+                spellSlotsTotal[1] = 3;
+                spellSlotsTotal[2] = 0;
+                break;
+            case 5:
+                spellSlotsTotal[2] = 2;
+                break;
+            case 6:
+                spellSlotsTotal[2] = 3;
+                spellSlotsTotal[3] = 0;
+                break;
+            case 7:
+                spellSlotsTotal[3] = 1;
+                break;
+            case 8:
+                spellSlotsTotal[3] = 2;
+                spellSlotsTotal[4] = 0;
+                break;
+            case 9:
+                spellSlotsTotal[3] = 3;
+                spellSlotsTotal[4] = 1;
+                break;
+            case 10:
+                spellSlotsTotal[4] = 2;
+                spellSlotsTotal[5] = 0;
+                break;
+            case 11:
+                spellSlotsTotal[5] = 1;
+                break;
+            case 12:
+                spellSlotsTotal[6] = 0;
+                break;
+            case 13:
+                spellSlotsTotal[6] = 1;
+                break;
+            case 14:
+                spellSlotsTotal[7] = 0;
+                break;
+            case 15:
+                spellSlotsTotal[7] = 1;
+                break;
+            case 16:
+                spellSlotsTotal[8] = 0;
+                break;
+            case 17:
+                spellSlotsTotal[4] = 2;
+                spellSlotsTotal[8] = 1;
+                break;
+            case 18:
+                spellSlotsTotal[4] = 3;
+                spellSlotsTotal[5] = 1;
+                break;
+            case 19:
+                spellSlotsTotal[5] = 2;
+                spellSlotsTotal[6] = 1;
+                break;
+            case 20:
+                spellSlotsTotal[6] = 2;
+                break;
+            default: throw new Exception(string.Format("Invalid level: {0} used for getting spellSlots", level));
+        }
     }
 
     private int getSpellsIndexUpperBound()
