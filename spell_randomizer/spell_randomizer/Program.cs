@@ -24,12 +24,14 @@ class Program {
                 case "longrest":
                 case "sleep": mig.longRest(); break;
                 case "cast": mig.castSpell(); break;
+                case "spellslots": mig.displaySpellSlots(); break;
                 case "commands":
                     Console.WriteLine("Possible input are as follows:\n" +
                         "ding:                 increases character level\n" +
                         "delevel:              decreases character level\n" +
                         "rest/longrest/sleep:  provides a new set of cantrips and spells\n" +
                         "cast:                 casts a spell\n" +
+                        "spellslots:           shows remaining spellslots\n" +
                         "quit:                 terminates the program\n"
                         ); break;
 

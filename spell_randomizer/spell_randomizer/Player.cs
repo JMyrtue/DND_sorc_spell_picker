@@ -56,17 +56,25 @@ public class Player {
         wildMagicCounter++;
     }
 
+    private int currentMaxSpellLevel()
+    {
+        int highestindex = spellSlotsTotal.Length;
+        var maxFound = false;
+
+        while (!maxFound)
+        {
+            highestindex--;
+            if(spellSlotsTotal[highestindex] != 0)
+            {
+                maxFound = true;
+            }
+        }
+
+        return highestindex + 1;
+    }
     public void castSpell()
     {
-        int currentMaxSpell = 0;
-        int highestIndex = spellSlotsTotal.Length;
-
-        while(currentMaxSpell == 0)
-        {
-            highestIndex--;
-            currentMaxSpell = spellSlotsTotal[highestIndex];
-        }
-        var MaxLevelSpell = highestIndex + 1;
+        var MaxLevelSpell = currentMaxSpellLevel();
 
         Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", name, MaxLevelSpell);
         var spellLevel = Convert.ToInt32(Console.ReadLine());
@@ -80,6 +88,7 @@ public class Player {
         if (spellSlotsUsed[spellLevel - 1] == spellSlotsTotal[spellLevel - 1])
         {
             Console.WriteLine("All spell slots used for this level - longrest to gain new spellslots");
+            return;
         } else
         {
             spellSlotsUsed[spellLevel - 1]++;
@@ -87,8 +96,8 @@ public class Player {
 
         Console.Clear();
         var WSinput = "";
-        Console.WriteLine("Your current counter for triggering a Wild Magic Surge is >>{0}<<\n", wildMagicCounter +
-            "Did your spellcast trigger a Wild Magic Surge? (y/n)");
+        Console.WriteLine("Your current counter for triggering a Wild Magic Surge is {0}", wildMagicCounter +
+            "\nDid your spellcast trigger a Wild Magic Surge? (y/n)");
         while(WSinput != "y" && WSinput != "n")
         {
             WSinput = Console.ReadLine();
@@ -107,6 +116,14 @@ public class Player {
 
     }
 
+    public void displaySpellSlots() 
+    {
+        var currentMax = currentMaxSpellLevel();
+        for(int i = 0; i < currentMax; i++)
+        {
+            Console.WriteLine("Spellslot level: {0} - {1} available spellslots", i + 1, spellSlotsTotal[i] - spellSlotsUsed[i]);
+        }
+    }
     public void displayLevel()
     {
         Console.WriteLine(name + " is now level " + level + "\n");
@@ -314,7 +331,6 @@ public class Player {
             {
                 indexList.Add(index);
             }
-
         }
 
         foreach (var i in indexList)
