@@ -9,22 +9,23 @@ class Program {
 
         Console.WriteLine("Welcome! What is the name of your sorcerer?");
         mig.Name = Console.ReadLine();
+        Console.Clear();
 
         while (playing)
         {
-            Console.WriteLine("Provide an input for next action:");
+            Console.WriteLine("\nProvide an input for next action:");
             input = Console.ReadLine().ToLower();
             Console.Clear();
 
             switch (input){
                 case "quit": playing = false; break;
-                case "ding": mig.levelUp(); break;
-                case "delevel": mig.levelDown(); break;
+                case "ding": mig.LevelUp(); break;
+                case "delevel": mig.LevelDown(); break;
                 case "rest":
                 case "longrest":
-                case "sleep": mig.longRest(); break;
-                case "cast": mig.castSpell(); break;
-                case "spellslots": mig.displaySpellSlots(); break;
+                case "sleep": mig.LongRest(); break;
+                case "cast": mig.CastSpell(); break;
+                case "spellslots": mig.DisplaySpellSlots(); break;
                 case "commands":
                     Console.WriteLine("Possible input are as follows:\n" +
                         "ding:                 increases character level\n" +
