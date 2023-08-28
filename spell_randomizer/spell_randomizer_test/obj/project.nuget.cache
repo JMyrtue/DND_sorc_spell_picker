@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SClBnbfNTGfHAy8Yszn6/NFGlMYkNBa1D+cbrLcOOECvI2QXNmjj5CuqMyCOkdtTv3+KNZtmVlmTZAOvDjqVIw==",
+  "dgSpecHash": "zMZF2II6RiJTo6eLTnzHOzHxXW9Ci3mM6/JDf2YsJNaYPft0j2RxMELWCtao13VQi/gbgjCdsq1PGOB+kVXcXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonathan\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj",
+  "projectFilePath": "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonathan\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Jonathan\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

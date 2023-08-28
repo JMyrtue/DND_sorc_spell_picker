@@ -25,14 +25,23 @@ class Program {
                 case "longrest":
                 case "sleep": mig.LongRest(); break;
                 case "cast": mig.CastSpell(); break;
-                case "spellslots": mig.DisplaySpellSlots(); break;
+                case "spellslots":
+                case "ss": mig.DisplaySpellSlots(); break;
+                case "points": mig.DisplaySorcPoints(); break;
+                case "+spellslot":
+                case "+ss": mig.FlexCast_PointsToSlots(); break;
+                case "-spellslot":
+                case "-ss": mig.FlexCast_SlotsToPoints(); break;
                 case "commands":
                     Console.WriteLine("Possible input are as follows:\n" +
                         "ding:                 increases character level\n" +
                         "delevel:              decreases character level\n" +
                         "rest/longrest/sleep:  provides a new set of cantrips and spells\n" +
                         "cast:                 casts a spell\n" +
-                        "spellslots:           shows remaining spellslots\n" +
+                        "spellslots/ss:        displays remaining spellslots\n" +
+                        "points:               displays remaining sorcery points\n" +
+                        "+spellslot/+ss:       convert sorcery points to a spellslot\n" +
+                        "-spellslot/-ss:       convert a spellslot to sorcery points\n" +
                         "quit:                 terminates the program\n"
                         ); break;
 
