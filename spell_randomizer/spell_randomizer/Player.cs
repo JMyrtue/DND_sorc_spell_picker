@@ -97,7 +97,6 @@ public class Player {
         WildMagicCounter = 1;
         SorcPointsUsed = 0;
         ResetSpellSlots();
-
     }
 
 
@@ -145,15 +144,8 @@ public class Player {
 
     }
 
-    public void FlexCast_PointsToSlots()
+    public void FlexCast_PointsToSlots(int spellSlot)
     {
-        var spellSlot = getConversionSpellSlot();
-        if(spellSlot == 0)
-        {
-            Console.WriteLine("Conversion cancelled");
-            return;
-        }
-
         var SorcPointsNeeded = SlotToPointConversion(spellSlot);
 
         if( SorcPointsNeeded > (MaxSorcPoints - SorcPointsUsed) )
@@ -167,14 +159,8 @@ public class Player {
 
     }
 
-    public void FlexCast_SlotsToPoints()
+    public void FlexCast_SlotsToPoints(int spellSlot)
     {
-        var spellSlot = getConversionSpellSlot();
-        if (spellSlot == 0)
-        {
-            Console.WriteLine("Conversion cancelled");
-            return;
-        }
 
         if (SpellSlotsUsed[spellSlot - 1] >= SpellSlotsTotal[spellSlot - 1])
         {
@@ -203,6 +189,7 @@ public class Player {
         return slot;
     }
 
+    //Private helper functions
     private int SlotToPointConversion(int slot)
     {
         return slot switch
@@ -216,7 +203,6 @@ public class Player {
         };
     }
 
-    //Private helper functions
     private void GetCantrips()
     {
         var indexList = new List<int>();

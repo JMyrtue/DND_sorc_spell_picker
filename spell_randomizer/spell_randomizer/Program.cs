@@ -17,7 +17,22 @@ class Program {
             input = Console.ReadLine().ToLower();
             Console.Clear();
 
-            switch (input){
+            var handledInput = input.Split(' ');
+            int parameter = 0;
+
+            var action = handledInput[0];
+            if (handledInput[0] == "+ss" || handledInput[0] == "-ss" || handledInput[0] == "+spellslot" || handledInput[0] == "-spellslot")
+            {
+                parameter = Convert.ToInt32(handledInput[1]);
+                if(parameter > 5 || parameter < 1)
+                {
+                    Console.WriteLine("Invalid level provided for Flexibility Casting - can only convert between spellslots of level 1-5.");
+                    continue;
+                } 
+
+            }
+
+            switch (action){
                 case "quit": playing = false; break;
                 case "ding": mig.LevelUp(); break;
                 case "delevel": mig.LevelDown(); break;
@@ -29,9 +44,9 @@ class Program {
                 case "ss": mig.DisplaySpellSlots(); break;
                 case "points": mig.DisplaySorcPoints(); break;
                 case "+spellslot":
-                case "+ss": mig.FlexCast_PointsToSlots(); break;
+                case "+ss": mig.FlexCast_PointsToSlots(parameter); break;
                 case "-spellslot":
-                case "-ss": mig.FlexCast_SlotsToPoints(); break;
+                case "-ss": mig.FlexCast_SlotsToPoints(parameter); break;
                 case "commands":
                     Console.WriteLine("Possible input are as follows:\n" +
                         "ding:                 increases character level\n" +
@@ -40,8 +55,10 @@ class Program {
                         "cast:                 casts a spell\n" +
                         "spellslots/ss:        displays remaining spellslots\n" +
                         "points:               displays remaining sorcery points\n" +
-                        "+spellslot/+ss:       convert sorcery points to a spellslot\n" +
-                        "-spellslot/-ss:       convert a spellslot to sorcery points\n" +
+                        "+spellslot/+ss X:     convert sorcery points to a spellslot\n" +
+                        "                      - where 'X' is the spellslot level converted to\n" +
+                        "-spellslot/-ss X:     convert a spellslot to sorcery points\n" +
+                        "                      - where 'X' is the spellslot level converted from\n" +
                         "quit:                 terminates the program\n"
                         ); break;
 
