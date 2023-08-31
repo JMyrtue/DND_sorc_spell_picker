@@ -77,6 +77,11 @@ public class Player {
             SpellsTotal = levelManager.GetSpellsTotal(Level);
             SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
             levelManager.SetSpellSlots(Level, SpellSlotsTotal);
+            MaxSorcPoints = Level switch
+            {
+                1 => 0,
+                _ => level
+            };
             DisplayLevel();
         }
         else
@@ -173,22 +178,6 @@ public class Player {
         }
     }
 
-    private int getConversionSpellSlot()
-    {
-        Console.WriteLine("What spellslot level are you converting to/from?");
-        int slot = Convert.ToInt32(Console.ReadLine());
-
-        while (slot > 5 && slot < 0)
-        {
-            Console.Clear();
-            Console.WriteLine("Only permitted to convert with spellslots of levels 1-5.\n" +
-                "If you wish to cancel the conversion give a '0' input.");
-            slot = Convert.ToInt32(Console.ReadLine());
-        }
-
-        return slot;
-    }
-
     //Private helper functions
     private int SlotToPointConversion(int slot)
     {
@@ -219,7 +208,7 @@ public class Player {
 
         foreach (int i in indexList)
         {
-            magicManager.GetUniqueCantrip(i + 1);
+            Console.WriteLine(magicManager.GetUniqueCantrip(i + 1));
         }
     }
 
@@ -239,7 +228,7 @@ public class Player {
 
         foreach (var i in indexList)
         {
-            magicManager.GetUniqueSpell(i + 1);
+            Console.WriteLine(magicManager.GetUniqueSpell(i + 1));
         }
     }
 

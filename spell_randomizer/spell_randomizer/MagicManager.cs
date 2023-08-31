@@ -1,9 +1,9 @@
 ﻿public class MagicManager
 {
     public MagicManager() { }
-    public void GetUniqueSpell(int index)
+    public string GetUniqueSpell(int index)
     {
-        string spell = index switch
+        return index switch
         {
             1 => "Absorb Elements - Spell level 1",
             2 => "Acid Stream (UA) - Spell level 1",
@@ -230,14 +230,13 @@
             223 => "Psychic Scream - Spell level 9",
             224 => "Time Stop - Spell level 9",
             225 => "Wish - Spell level 9",
+            _ => throw new Exception("Invalid index provided for spellretrival")
         };
-        Console.WriteLine(spell);
     }
 
-    public void GetUniqueCantrip(int index)
+    public string GetUniqueCantrip(int index)
     {
-        string cantrip = "";
-        cantrip = index switch
+        return index switch
         {
             1 => "Acid Splash",
             2 => "Blade Ward",
@@ -271,6 +270,5 @@
             30 => "True Strike",
             _ => throw new Exception("Invalid index provided for cantrip retrival"),
         };
-        Console.WriteLine(cantrip);
     }
 }
