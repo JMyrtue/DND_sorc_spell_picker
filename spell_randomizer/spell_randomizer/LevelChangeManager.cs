@@ -43,7 +43,7 @@
     {
         int temp;
 
-        if (level < 4)
+        if (level >= 1 && level < 4)
         {
             temp = 4;
         }
