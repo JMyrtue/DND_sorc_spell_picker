@@ -178,6 +178,23 @@ public class Player {
         }
     }
 
+    public void MetaMagic(int sorcPointsCost)
+    {
+        if(level < 3)
+        {
+            Console.WriteLine("Level not high enough for meta magic.");
+            return;
+        }
+
+        if(maxSorcPoints - sorcPointsUsed >= sorcPointsCost )
+        {
+            sorcPointsUsed += sorcPointsCost;
+        } else
+        {
+            Console.WriteLine("Not enough Sorcery Points for the particular Metamagic");
+        }
+    }
+
     //Private helper functions
     private int SlotToPointConversion(int slot)
     {
