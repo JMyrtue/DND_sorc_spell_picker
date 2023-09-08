@@ -135,5 +135,62 @@ namespace spell_randomizer_test
             // Assert
             Assert.Equal(expectedSorcPointsAfterRest, actualSorcPointsAfterRest);
         }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void MetaMagic_CostInput_AssertUsedSorcPoints(int metaMagicCost)
+        {
+            // Arrange
+            var player = new Player();
+            for(int i = 0; i < 2; i++)
+            {
+                player.LevelUp(); // Metamagic first available at level 3
+            }
+            var expectedUsedSorcPoints = 0 + metaMagicCost;
+
+            // Act
+            player.MetaMagic(metaMagicCost);
+            var actualUsedSorcPoints = player.SorcPointsUsed;
+
+            // Assert
+            Assert.Equal(actualUsedSorcPoints, expectedUsedSorcPoints);
+        }
+
+        [Fact]
+        public void MetaMagic_NotEnoughSorcPoints_AssertNoChange()
+        {
+            // Arrange
+            var player = new Player();
+            for (int i = 0; i < 2; i++)
+            {
+                player.LevelUp(); // Metamagic first available at level 3
+            }
+            var expectedUsedSorcPoints = 0;
+
+            // Act
+            player.MetaMagic(4);
+            var actualUsedSorcPoints = player.SorcPointsUsed;
+
+            // Assert
+            Assert.Equal(actualUsedSorcPoints, expectedUsedSorcPoints);
+        }
+
+        [Fact]
+        public void MetaMagic_LevelToLow_AssertNoChange()
+        {
+            // Arrange
+            var player = new Player();
+            var expectedUsedSorcPoints = 0;
+
+            // Act
+            player.MetaMagic(1);
+            var actualUsedSorcPoints = player.SorcPointsUsed;
+
+            // Assert
+            Assert.Equal(actualUsedSorcPoints, expectedUsedSorcPoints);
+
+        }
     }
 }
