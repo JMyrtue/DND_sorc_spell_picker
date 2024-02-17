@@ -8,7 +8,7 @@ namespace spell_randomizer_test
         public void PlayerLevelUp_AssertLevel()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             var expectedLevel = 1 + 1;
 
             // Act
@@ -23,7 +23,7 @@ namespace spell_randomizer_test
         public void PlayerLevelDown_AssertLevel()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             var expectedLevel =  1 + 1 - 1;
 
             // Act
@@ -39,7 +39,7 @@ namespace spell_randomizer_test
         public void FlexCast_LevelUpConvertToSpellSlotLVL1_ExpectSorcPointsAndSpellSlots()
         {
             // Arrange 
-            var player = new Player();
+            var player = new Player("test");
             player.LevelUp(); //Leveling up in order to gain 2 Sorcery points
             var expectedSorcPoints = 2 - 2;
             var expectedLvl1SpellSlots = 3 + 1;
@@ -58,7 +58,7 @@ namespace spell_randomizer_test
         public void FlexCast_LevelUpConvertFromSpellSlotLVL1_ExpectSorcPointsAndSpellSlots()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             player.LevelUp();
             var expectedSorcPoints = 2 + 2;
             var expectedLvl1SpellSlots = 3 - 1;
@@ -77,7 +77,7 @@ namespace spell_randomizer_test
         public void FlexCast_Level10ConvertToSpellSlotLVL5_ExpectSorcPointsAndSpellSlots()
         {
             // Arrange 
-            var player = new Player();
+            var player = new Player("test");
             for(int i = 1; i < 10; i++)
             {
                 player.LevelUp();
@@ -100,7 +100,7 @@ namespace spell_randomizer_test
         public void FlexCast_Level10ConvertFromSpellSlotLVL5_ExpectSorcPointsAndSpellSlots()
         {
             // Arrange 
-            var player = new Player();
+            var player = new Player("test");
             for (int i = 1; i < 10; i++)
             {
                 player.LevelUp();
@@ -123,7 +123,7 @@ namespace spell_randomizer_test
         public void Longrest_SorcPointsReset()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             player.LevelUp();
             player.FlexCast_PointsToSlots(1);
             var expectedSorcPointsAfterRest = 0 + 2;
@@ -143,7 +143,7 @@ namespace spell_randomizer_test
         public void MetaMagic_CostInput_AssertUsedSorcPoints(int metaMagicCost)
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             for(int i = 0; i < 2; i++)
             {
                 player.LevelUp(); // Metamagic first available at level 3
@@ -162,7 +162,7 @@ namespace spell_randomizer_test
         public void MetaMagic_NotEnoughSorcPoints_AssertNoChange()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             for (int i = 0; i < 2; i++)
             {
                 player.LevelUp(); // Metamagic first available at level 3
@@ -181,7 +181,7 @@ namespace spell_randomizer_test
         public void MetaMagic_LevelToLow_AssertNoChange()
         {
             // Arrange
-            var player = new Player();
+            var player = new Player("test");
             var expectedUsedSorcPoints = 0;
 
             // Act

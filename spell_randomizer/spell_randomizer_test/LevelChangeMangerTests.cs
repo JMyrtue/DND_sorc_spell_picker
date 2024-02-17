@@ -104,7 +104,7 @@ namespace spell_randomizer_test
             // The SetSpellSlots() method is called whenever a character levels up - not called directly in this test case.
             
             // Level 1
-            var player= new Player();
+            var player= new Player("test");
             var expectedSpellSlots = new int[] { 2, 0, 0, 0, 0, 0, 0, 0, 0 };
             var actualSpellSlots = player.SpellSlotsTotal;
             Assert.Equal(expectedSpellSlots, actualSpellSlots);
@@ -226,7 +226,7 @@ namespace spell_randomizer_test
         [Fact]
         public void SetSpellSlots_AssertingSpellSlotsAfterEachLevelDown()
         {
-            var player = new Player();
+            var player = new Player("test");
 
             for(int i = 1; i < 20; i++)
             {

@@ -16,26 +16,27 @@ public class Player {
     private int spellTableUpperBoundIndex;
     public int SpellTableUpperBoundIndex { get { return spellTableUpperBoundIndex; } private set { spellTableUpperBoundIndex = value; } }
     private int wildMagicCounter;
-    public int WildMagicCounter { get { return wildMagicCounter; } private set { wildMagicCounter = value; } }
+    public int WildMagicCounter { get { return wildMagicCounter; } set { wildMagicCounter = value; } }
     private int sorcPointsUsed;
-    public int SorcPointsUsed { get { return sorcPointsUsed;  } private set { sorcPointsUsed = value; } }
+    public int SorcPointsUsed { get { return sorcPointsUsed;  } set { sorcPointsUsed = value; } }
     private int maxSorcPoints;
     public int MaxSorcPoints { get { return maxSorcPoints; } private set { maxSorcPoints = value; } }
     private int[] spellSlotsTotal; 
     public int[] SpellSlotsTotal { get { return spellSlotsTotal; } set { spellSlotsTotal = value; } }
     private int[] spellSlotsUsed;
-    public int[] SpellSlotsUsed { get { return spellSlotsUsed; } private set { spellSlotsUsed = value; } }
+    public int[] SpellSlotsUsed { get { return spellSlotsUsed; } set { spellSlotsUsed = value; } }
 
     private Random randomomizer;
     private MagicManager magicManager;
     private LevelChangeManager levelManager;
 
-    public Player()
+    public Player(string name)
     {
         randomomizer = new Random();
         magicManager = new MagicManager();
         levelManager = new LevelChangeManager();
 
+        Name = name;
         Level = 1;
         CantripsTotal = levelManager.GetCantripsTotal(level);
         SpellsTotal = levelManager.GetSpellsTotal(level);
@@ -45,16 +46,6 @@ public class Player {
         MaxSorcPoints = levelManager.GetMaxSorcPoints(level);
         SpellSlotsTotal = new int[] { 2, 0, 0, 0, 0, 0, 0, 0, 0 };
         SpellSlotsUsed = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    }
-
-    public Player(string name, int level, int wildMagicCounter, int sorcPointsUsed, int[]ssTotal, int[] ssUsed)
-    {
-        Name = name;
-        Level = level;
-        WildMagicCounter = wildMagicCounter;
-        SorcPointsUsed = sorcPointsUsed;
-        SpellSlotsTotal = ssTotal;
-        SpellSlotsUsed = ssUsed;
     }
 
     public void LevelUp()

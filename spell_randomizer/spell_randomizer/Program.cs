@@ -1,15 +1,13 @@
-﻿using System.ComponentModel.Design;
+﻿using spell_randomizer;
+using System.ComponentModel.Design;
 
 class Program {
     static void Main()
     {
-        var mig = new Player();
+        var LoadManager = new LoadManager();
+        var mig = LoadManager.determineCharacter();
         var playing = true;
         string input;
-
-        Console.WriteLine("Welcome! What is the name of your sorcerer?");
-        mig.Name = Console.ReadLine();
-        Console.Clear();
 
         while (playing)
         {
@@ -85,5 +83,22 @@ class Program {
             }
 
         }
+
+        Console.WriteLine("Thanks for playing! Remember to notice the stats of your character:\n" +
+            "Name: {0}\n" +
+            "Level: {1}\n" +
+            "Wild magic counter: {2}\n" +
+            "Sorcery points remaining: {3}", mig.Name, mig.Level, mig.WildMagicCounter, mig.MaxSorcPoints - mig.SorcPointsUsed);
+
+        for(int i = 1; i <= mig.SpellSlotsTotal.Length; i++)
+        {
+            if (mig.SpellSlotsTotal[i - 1] > 0)
+            {
+                Console.WriteLine("Remaining spell slots of level {0}: {1}", i, mig.SpellSlotsTotal[i - 1] - mig.SpellSlotsUsed[i - 1]);
+            }
+
+        }
+
+
     }
 }
