@@ -77,7 +77,7 @@ class Program {
                         "-spellslot/-ss X:     convert a spellslot to sorcery points\n" +
                         "                      - where 'X' is the spellslot level converted from\n" +
                         "metamagic/mm X:       cast metamagic" +
-                        "                      - where 'X' is the cost of the specific metamagic" +
+                        "                      - where 'X' is the cost of the specific metamagic\n" +
                         "quit:                 terminates the program\n"
                         ); break;
 

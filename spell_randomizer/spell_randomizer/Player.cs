@@ -42,9 +42,19 @@ public class Player {
         SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(level);
         WildMagicCounter = 1;
         SorcPointsUsed = 0;
-        MaxSorcPoints = 0;
+        MaxSorcPoints = levelManager.GetMaxSorcPoints(level);
         SpellSlotsTotal = new int[] { 2, 0, 0, 0, 0, 0, 0, 0, 0 };
         SpellSlotsUsed = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    }
+
+    public Player(string name, int level, int wildMagicCounter, int sorcPointsUsed, int[]ssTotal, int[] ssUsed)
+    {
+        Name = name;
+        Level = level;
+        WildMagicCounter = wildMagicCounter;
+        SorcPointsUsed = sorcPointsUsed;
+        SpellSlotsTotal = ssTotal;
+        SpellSlotsUsed = ssUsed;
     }
 
     public void LevelUp()
@@ -56,10 +66,6 @@ public class Player {
             SpellsTotal = levelManager.GetSpellsTotal(Level);
             SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
             levelManager.SetSpellSlots(Level, SpellSlotsTotal);
-            MaxSorcPoints = Level switch {
-                1 => 0,
-                _ => level
-            };
             DisplayLevel();
         }
         else
@@ -77,11 +83,7 @@ public class Player {
             SpellsTotal = levelManager.GetSpellsTotal(Level);
             SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
             levelManager.SetSpellSlots(Level, SpellSlotsTotal);
-            MaxSorcPoints = Level switch
-            {
-                1 => 0,
-                _ => level
-            };
+            MaxSorcPoints = levelManager.GetMaxSorcPoints(Level);
             DisplayLevel();
         }
         else

@@ -1,4 +1,7 @@
-﻿public class LevelChangeManager{
+﻿using System.Reflection.Emit;
+using System.Security.Cryptography.X509Certificates;
+
+public class LevelChangeManager{
     
     public LevelChangeManager()
     {
@@ -161,5 +164,15 @@
                 break;
             default: throw new Exception(string.Format("Invalid level: {0} used for getting spellSlots", level));
         }
+
+
+    }
+    public int GetMaxSorcPoints(int level)
+    {
+        return level switch
+        {
+            1 => 0,
+            _ => level
+        };
     }
 }
