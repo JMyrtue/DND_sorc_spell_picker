@@ -62,7 +62,7 @@ namespace spell_randomizer
                 character.LevelUp();
             }
             Console.Clear();
-
+            
             var wildMagicCounter = 0;
             while (wildMagicCounter < 1 || wildMagicCounter > 20) 
             {

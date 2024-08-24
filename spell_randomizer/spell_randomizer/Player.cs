@@ -57,6 +57,7 @@ public class Player {
             SpellsTotal = levelManager.GetSpellsTotal(Level);
             SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
             levelManager.SetSpellSlots(Level, SpellSlotsTotal);
+            MaxSorcPoints = levelManager.GetMaxSorcPoints(Level);
             DisplayLevel();
         }
         else
@@ -101,7 +102,7 @@ public class Player {
     public void CastSpell()
     {
         var MaxLevelSpell = GetCurrentMaxSpellLevel();
-
+         
         Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", Name, MaxLevelSpell);
         var spellLevel = Convert.ToInt32(Console.ReadLine());
 
