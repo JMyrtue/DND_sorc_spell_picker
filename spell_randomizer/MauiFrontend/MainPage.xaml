@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiFrontend.MainPage">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout>
+        <Label Text="Level"
+              Grid.Row="0"
+              Grid.Column="0"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="lvl up"
+                    Grid.Row="0"
+                    Grid.Column="0" />
+                <Button Text="lvl down"
+                    Grid.Row="0"
+                    Grid.Column="0" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="0"
+            Grid.Column="1">
+            <Label Text="Name:"/>
+            <Button Text="Rest"/>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="1"
+            Grid.Column="0">
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0">
+                <Label Text="Cantrips:"/>
+                <Label Text="Cantrip 1"/>
+                <Label Text="Cantrip 2"/>
+                <Label Text="Cantrip 3"/>
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0">
+                <Label Text="Spells:"/>
+                <Label Text="Spell 1 - level 1"/>
+                <Label Text="Spell 1 - level 1"/>
+            </StackLayout>
+        </StackLayout>
+        <Button 
+                        x:Name="CounterBtn"
+                        Text="Cast"
+                            Grid.Row="5"
+                            Grid.Column="1" />
+                <Button Text="-"
+                        Grid.Row="5"
+                        Grid.Column="1" />
+                <Entry Placeholder="Cast"
+                       Grid.Row="5"
+                       Grid.Column="2" />
+
+
+        <Label Text="Sorc points: 4"
+               Grid.Row="6"
+               Grid.Column="0" />
+        <Label Text="Wild Counter: 0"
+               Grid.Row="6"
+               Grid.Column="1" />
+        <Button Text="+"
+                Grid.Row="6"
+                Grid.Column="2" />
+        <Button Text="Surge"
+                Grid.Row="6"
+                Grid.Column="2" />
+    </Grid>
+</ContentPage>

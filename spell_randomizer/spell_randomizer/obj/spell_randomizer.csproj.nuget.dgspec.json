@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {}
+    "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {
+    "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
         "projectName": "spell_randomizer",
-        "projectPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
-        "packagesPath": "C:\\Users\\toyot\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan\\Documents\\Programmering\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\toyot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

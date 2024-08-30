@@ -1,0 +1,1 @@
+C:\Users\Jonathan\Documents\Programmering\DND_sorc_spell_picker\spell_randomizer\MauiFrontend\MauiFrontend.csproj;x64
