@@ -1,18 +1,17 @@
-﻿using spell_randomizer;
-using System.ComponentModel.Design;
+﻿namespace spell_randomizer;
 
 class Program {
     static void Main()
     {
-        var LoadManager = new LoadManager();
-        var mig = LoadManager.determineCharacter();
+        var loadManager = new LoadManager();
+        var mig = loadManager.determineCharacter();
         var playing = true;
         string input;
 
         while (playing)
         {
             Console.WriteLine("\nProvide an input for next action:");
-            input = Console.ReadLine().ToLower();
+            input = Console.ReadLine()!.ToLower() ;
             Console.Clear();
 
             var handledInput = input.Split(' ');
@@ -29,7 +28,7 @@ class Program {
                 parameter = Convert.ToInt32(handledInput[1]);
                 if (parameter > 5 || parameter < 1)
                 {
-                    Console.WriteLine("Invalid level provided for Flexibility Casting - can only convert between spellslots of level 1-5.");
+                    Console.WriteLine("Invalid level provided for Flexibility Casting - can only convert between spell slots of level 1-5.");
                     continue;
                 }
 
@@ -46,7 +45,8 @@ class Program {
             }
 
             switch (action){
-                case "quit": playing = false; break;
+                case "quit":
+                    mig.Save(); playing = false; break;
                 case "ding": mig.LevelUp(); break;
                 case "delevel": mig.LevelDown(); break;
                 case "rest":
@@ -62,22 +62,23 @@ class Program {
                 case "-ss": mig.FlexCast_SlotsToPoints(parameter); break;
                 case "mm":
                 case "metamagic": mig.MetaMagic(parameter); break;
+                case "spells": mig.DisplayCantripsAndSpells(); break;
                 case "commands":
                     Console.WriteLine("Possible input are as follows:\n" +
-                        "ding:                 increases character level\n" +
-                        "delevel:              decreases character level\n" +
-                        "rest/longrest/sleep:  provides a new set of cantrips and spells\n" +
-                        "cast:                 casts a spell\n" +
-                        "spellslots/ss:        displays remaining spellslots\n" +
-                        "points:               displays remaining sorcery points\n" +
-                        "+spellslot/+ss X:     convert sorcery points to a spellslot\n" +
-                        "                      - where 'X' is the spellslot level converted to\n" +
-                        "-spellslot/-ss X:     convert a spellslot to sorcery points\n" +
-                        "                      - where 'X' is the spellslot level converted from\n" +
-                        "metamagic/mm X:       cast metamagic" +
-                        "                      - where 'X' is the cost of the specific metamagic\n" +
-                        "quit:                 terminates the program\n"
-                        ); break;
+                                      "ding:                 increases character level\n" +
+                                      "delevel:              decreases character level\n" +
+                                      "rest/longrest/sleep:  provides a new set of cantrips and spells\n" +
+                                      "cast:                 casts a spell\n" +
+                                      "spellslots/ss:        displays remaining spellslots\n" +
+                                      "points:               displays remaining sorcery points\n" +
+                                      "+spellslot/+ss X:     convert sorcery points to a spellslot\n" +
+                                      "                      - where 'X' is the spellslot level converted to\n" +
+                                      "-spellslot/-ss X:     convert a spellslot to sorcery points\n" +
+                                      "                      - where 'X' is the spellslot level converted from\n" +
+                                      "metamagic/mm X:       cast metamagic" +
+                                      "                      - where 'X' is the cost of the specific metamagic\n" +
+                                      "quit:                 terminates the program\n"
+                    ); break;
 
                 default: Console.WriteLine("No valid input detected - try the \'commands\' input for further info on valid inputs.\n"); break;
             }
@@ -85,10 +86,10 @@ class Program {
         }
 
         Console.WriteLine("Thanks for playing! Remember to notice the stats of your character:\n" +
-            "Name: {0}\n" +
-            "Level: {1}\n" +
-            "Wild magic counter: {2}\n" +
-            "Sorcery points remaining: {3}", mig.Name, mig.Level, mig.WildMagicCounter, mig.MaxSorcPoints - mig.SorcPointsUsed);
+                          "Name: {0}\n" +
+                          "Level: {1}\n" +
+                          "Wild magic counter: {2}\n" +
+                          "Sorcery points remaining: {3}", mig.Name, mig.Level, mig.WildMagicCounter, mig.MaxSorcPoints - mig.SorcPointsUsed);
 
         for(int i = 1; i <= mig.SpellSlotsTotal.Length; i++)
         {

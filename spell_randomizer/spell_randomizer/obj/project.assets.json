@@ -8,26 +8,25 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\toyot\\.nuget\\packages\\": {}
+    "/home/jonathan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
+      "projectUniqueName": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj",
       "projectName": "spell_randomizer",
-      "projectPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
-      "packagesPath": "C:\\Users\\toyot\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\obj\\",
+      "projectPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj",
+      "packagesPath": "/home/jonathan/.nuget/packages/",
+      "outputPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\toyot\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/jonathan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -37,10 +36,17 @@
         }
       },
       "warningProperties": {
+        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -56,12 +62,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.20, 8.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

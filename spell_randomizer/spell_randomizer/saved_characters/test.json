@@ -1,0 +1,48 @@
+{
+  "Name": "Test",
+  "Level": 7,
+  "CantripsTotal": 5,
+  "SpellsTotal": 8,
+  "SpellTableUpperBoundIndex": 151,
+  "WildMagicCounter": 1,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 7,
+  "SpellSlotsTotal": [
+    4,
+    3,
+    3,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpellSlotsUsed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Cantrips": [
+    "Blade Ward",
+    "Infestation",
+    "Booming Blade",
+    "Mold Earth",
+    "Create Bonfire"
+  ],
+  "Spells": [
+    "Phantasmal Force - Spell level 2",
+    "Dispel Magic - Spell level 3",
+    "Chromatic Orb - Spell level 1",
+    "Mage Armor - Spell level 1",
+    "Find Vehicle (UA) - Spell level 2",
+    "Maximillian\u0027s Earthen Grasp - Spell level 2",
+    "Mind Spike - Spell level 2"
+  ]
+}

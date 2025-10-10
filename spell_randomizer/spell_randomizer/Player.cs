@@ -1,63 +1,69 @@
-﻿using System.Reflection.Emit;
-using System.Security.Cryptography;
-using System.Threading.Channels;
+﻿using System.Text.Json;
+
+namespace spell_randomizer;
 
 public class Player {
+    public string Name { get; set; }
+    public int Level { get; set; }
+    public int CantripsTotal { get; set; }
+    public int SpellsTotal { get; set; }
+    public int SpellTableUpperBoundIndex { get; set; }
+    public int WildMagicCounter { get; set; }
+    public int SorcPointsUsed { get; set; }
+    public int MaxSorcPoints { get; set; }
+    public int[] SpellSlotsTotal { get; set; }
+    public int[] SpellSlotsUsed { get; set; }
+    public List<String> Cantrips { get; set; }
+    public List<String> Spells { get; set; }
 
-    private string name;
-    public string Name { get { return name; } set { name = value; } }
+    private readonly Random _randomizer;
+    private readonly MagicManager _magicManager;
+    private readonly LevelChangeManager _levelManager;
 
-    private int level;
-    public int Level { get { return level; } private set { level = value; } }
-    private int cantripsTotal;
-    public int CantripsTotal { get { return cantripsTotal; } private set { cantripsTotal = value; } }
-    private int spellsTotal;
-    public int SpellsTotal { get { return spellsTotal; } private set { spellsTotal = value;  } }
-    private int spellTableUpperBoundIndex;
-    public int SpellTableUpperBoundIndex { get { return spellTableUpperBoundIndex; } private set { spellTableUpperBoundIndex = value; } }
-    private int wildMagicCounter;
-    public int WildMagicCounter { get { return wildMagicCounter; } set { wildMagicCounter = value; } }
-    private int sorcPointsUsed;
-    public int SorcPointsUsed { get { return sorcPointsUsed;  } set { sorcPointsUsed = value; } }
-    private int maxSorcPoints;
-    public int MaxSorcPoints { get { return maxSorcPoints; } private set { maxSorcPoints = value; } }
-    private int[] spellSlotsTotal; 
-    public int[] SpellSlotsTotal { get { return spellSlotsTotal; } set { spellSlotsTotal = value; } }
-    private int[] spellSlotsUsed;
-    public int[] SpellSlotsUsed { get { return spellSlotsUsed; } set { spellSlotsUsed = value; } }
+    public Player()
+    {
+        _randomizer = new Random();
+        _magicManager = new MagicManager();
+        _levelManager = new LevelChangeManager();
 
-    private Random randomomizer;
-    private MagicManager magicManager;
-    private LevelChangeManager levelManager;
-
+        Name = string.Empty;
+        SpellSlotsTotal = new int[9];
+        SpellSlotsUsed = new int[9];
+        Spells = new List<string>();
+        Cantrips = new List<string>();
+    }
     public Player(string name)
     {
-        randomomizer = new Random();
-        magicManager = new MagicManager();
-        levelManager = new LevelChangeManager();
+        _randomizer = new Random();
+        _magicManager = new MagicManager();
+        _levelManager = new LevelChangeManager();
 
         Name = name;
         Level = 1;
-        CantripsTotal = levelManager.GetCantripsTotal(level);
-        SpellsTotal = levelManager.GetSpellsTotal(level);
-        SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(level);
+        CantripsTotal = _levelManager.GetCantripsTotal(Level);
+        SpellsTotal = _levelManager.GetSpellsTotal(Level);
+        SpellTableUpperBoundIndex = _levelManager.GetSpellsIndexUpperBound(Level);
         WildMagicCounter = 1;
         SorcPointsUsed = 0;
-        MaxSorcPoints = levelManager.GetMaxSorcPoints(level);
-        SpellSlotsTotal = new int[] { 2, 0, 0, 0, 0, 0, 0, 0, 0 };
-        SpellSlotsUsed = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        MaxSorcPoints = _levelManager.GetMaxSorcPoints(Level);
+        SpellSlotsTotal = [2, 0, 0, 0, 0, 0, 0, 0, 0];
+        SpellSlotsUsed = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        Spells = new List<string>();
+        Cantrips = new List<string>();
+        GetSpells();
+        GetCantrips();
     }
 
     public void LevelUp()
     {
-        if (level < 20)
+        if (Level < 20)
         {
             Level++;
-            CantripsTotal = levelManager.GetCantripsTotal(Level);
-            SpellsTotal = levelManager.GetSpellsTotal(Level);
-            SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
-            levelManager.SetSpellSlots(Level, SpellSlotsTotal);
-            MaxSorcPoints = levelManager.GetMaxSorcPoints(Level);
+            CantripsTotal = _levelManager.GetCantripsTotal(Level);
+            SpellsTotal = _levelManager.GetSpellsTotal(Level);
+            SpellTableUpperBoundIndex = _levelManager.GetSpellsIndexUpperBound(Level);
+            _levelManager.SetSpellSlots(Level, SpellSlotsTotal);
+            MaxSorcPoints = _levelManager.GetMaxSorcPoints(Level);
             DisplayLevel();
         }
         else
@@ -68,14 +74,14 @@ public class Player {
 
     public void LevelDown()
     {
-        if (level > 1)
+        if (Level > 1)
         {
             Level--;
-            CantripsTotal = levelManager.GetCantripsTotal(Level);
-            SpellsTotal = levelManager.GetSpellsTotal(Level);
-            SpellTableUpperBoundIndex = levelManager.GetSpellsIndexUpperBound(Level);
-            levelManager.SetSpellSlots(Level, SpellSlotsTotal);
-            MaxSorcPoints = levelManager.GetMaxSorcPoints(Level);
+            CantripsTotal = _levelManager.GetCantripsTotal(Level);
+            SpellsTotal = _levelManager.GetSpellsTotal(Level);
+            SpellTableUpperBoundIndex = _levelManager.GetSpellsIndexUpperBound(Level);
+            _levelManager.SetSpellSlots(Level, SpellSlotsTotal);
+            MaxSorcPoints = _levelManager.GetMaxSorcPoints(Level);
             DisplayLevel();
         }
         else
@@ -101,15 +107,25 @@ public class Player {
 
     public void CastSpell()
     {
-        var MaxLevelSpell = GetCurrentMaxSpellLevel();
+        var maxLevelSpell = GetCurrentMaxSpellLevel();
          
-        Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", Name, MaxLevelSpell);
-        var spellLevel = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", Name, maxLevelSpell);
 
-        while (spellLevel < 0 || spellLevel > MaxLevelSpell)
+        var spellLevel = 0;
+        while (!Int32.TryParse(Console.ReadLine(), out spellLevel))
         {
-            Console.WriteLine("Invalid spelllevel, must be between 1 and {0} - try again", MaxLevelSpell);
-            spellLevel = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Invalid input - provide integer for spell level.");
+            Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", Name, maxLevelSpell);
+        }
+
+        while (spellLevel <= 0 || spellLevel > maxLevelSpell)
+        {
+            Console.WriteLine("Invalid spelllevel, must be between 1 and {0} - try again", maxLevelSpell);
+            while (!Int32.TryParse(Console.ReadLine(), out spellLevel))
+            {
+                Console.WriteLine("Invalid input - provide integer for spell level.");
+                Console.WriteLine("What is the level of the spell casted? - keep in mind {0}'s highest spell level is {1}", Name, maxLevelSpell);
+            }
         }
 
         if (SpellSlotsUsed[spellLevel - 1] == SpellSlotsTotal[spellLevel - 1])
@@ -122,19 +138,19 @@ public class Player {
         }
 
         Console.Clear();
-        var WSinput = "";
+        var wSinput = "";
         Console.WriteLine("Your current counter for triggering a Wild Magic Surge is {0}", WildMagicCounter +
             "\nDid your spellcast trigger a Wild Magic Surge? (y/n)");
-        while (WSinput != "y" && WSinput != "n")
+        while (wSinput != "y" && wSinput != "n")
         {
-            WSinput = Console.ReadLine();
-            WSinput = WSinput.ToLower();
+            wSinput = Console.ReadLine() ?? "";
+            wSinput = wSinput.ToLower();
         }
-        if (WSinput == "y")
+        if (wSinput == "y")
         {
             WildMagicCounter = 1;
             Console.WriteLine("Magic Magic counter have been reset");
-        } else if (WSinput == "n") {
+        } else if (wSinput == "n") {
             IncrementWildMagicCounter();
         } else
         {
@@ -145,14 +161,14 @@ public class Player {
 
     public void FlexCast_PointsToSlots(int spellSlot)
     {
-        var SorcPointsNeeded = SlotToPointConversion(spellSlot);
+        var sorcPointsNeeded = SlotToPointConversion(spellSlot);
 
-        if( SorcPointsNeeded > (MaxSorcPoints - SorcPointsUsed) )
+        if( sorcPointsNeeded > (MaxSorcPoints - SorcPointsUsed) )
         {
             Console.WriteLine("Not enough Sorcery Points for the conversion");
         } else
         {
-            SorcPointsUsed += SorcPointsNeeded;
+            SorcPointsUsed += sorcPointsNeeded;
             SpellSlotsUsed[spellSlot - 1]--;
         }
 
@@ -174,19 +190,46 @@ public class Player {
 
     public void MetaMagic(int sorcPointsCost)
     {
-        if(level < 3)
+        if(Level < 3)
         {
             Console.WriteLine("Level not high enough for meta magic.");
             return;
         }
 
-        if(maxSorcPoints - sorcPointsUsed >= sorcPointsCost )
+        if(MaxSorcPoints - SorcPointsUsed >= sorcPointsCost )
         {
-            sorcPointsUsed += sorcPointsCost;
+            SorcPointsUsed += sorcPointsCost;
         } else
         {
             Console.WriteLine("Not enough Sorcery Points for the particular Metamagic");
         }
+    }
+
+    public void Save()
+    {
+        var filePath = $"../../../saved_characters/{Name.ToLower()}.json";
+
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(this, options);
+        File.WriteAllText(filePath, json);
+
+        Console.WriteLine($"Player data saved to {filePath}");
+    }
+    
+    public static Player Load(string playerName)
+    {
+        var filepath = $"../../../saved_characters/{playerName.ToLower()}.json";
+        if (!File.Exists(filepath))
+            throw new FileNotFoundException("Save file not found.", playerName);
+
+        string json = File.ReadAllText(filepath);
+        Player? player = JsonSerializer.Deserialize<Player>(json);
+
+        if (player == null)
+            throw new Exception("Failed to deserialize player data.");
+
+        Console.WriteLine($"Player {playerName} loaded!");
+        return player;
     }
 
     //Private helper functions
@@ -205,12 +248,13 @@ public class Player {
 
     private void GetCantrips()
     {
+        Cantrips.Clear();
         var indexList = new List<int>();
         int index;
 
         while (indexList.Count < CantripsTotal)
         {
-            index = randomomizer.Next(30);
+            index = _randomizer.Next(30);
             if (!indexList.Contains(index))
             {
                 indexList.Add(index);
@@ -219,18 +263,20 @@ public class Player {
 
         foreach (int i in indexList)
         {
-            Console.WriteLine(magicManager.GetUniqueCantrip(i + 1));
+            var cantrip = _magicManager.GetUniqueCantrip(i + 1);
+            Cantrips.Add(cantrip);
+            Console.WriteLine(cantrip);
         }
     }
 
     private void GetSpells()
     {
+        Spells.Clear();
         var indexList = new List<int>();
-        int index;
 
         while (indexList.Count < SpellsTotal)
         {
-            index = randomomizer.Next(SpellTableUpperBoundIndex);
+            var index = _randomizer.Next(SpellTableUpperBoundIndex);
             if (!indexList.Contains(index))
             {
                 indexList.Add(index);
@@ -239,7 +285,9 @@ public class Player {
 
         foreach (var i in indexList)
         {
-            Console.WriteLine(magicManager.GetUniqueSpell(i + 1));
+            var spell = _magicManager.GetUniqueSpell(i + 1);
+            Spells.Add(spell);
+            Console.WriteLine(spell);
         }
     }
 
@@ -274,6 +322,22 @@ public class Player {
     }
 
     // Inner 'Printer' class
+
+    public void DisplayCantripsAndSpells()
+    {
+        Console.WriteLine(">>Cantrips<<");
+        foreach (var cantrip in Cantrips)
+        {
+            Console.WriteLine(cantrip);
+        }
+        
+        Console.WriteLine("\n>>Spells<<:");
+        foreach (var spell in Spells)
+        {
+            Console.WriteLine(spell);
+        }
+
+    }
     public void DisplaySpellSlots()
     {
         var currentMax = GetCurrentMaxSpellLevel();

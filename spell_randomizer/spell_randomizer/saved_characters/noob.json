@@ -1,0 +1,56 @@
+{
+  "Name": "noob",
+  "Level": 1,
+  "CantripsTotal": 4,
+  "SpellsTotal": 2,
+  "SpellTableUpperBoundIndex": 34,
+  "WildMagicCounter": 1,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 0,
+  "SpellSlotsTotal": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpellSlotsUsed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Cantrips": [
+    "On/Off (UA)",
+    "Message",
+    "Green-Flame Blade",
+    "Infestation",
+    "Fire Bolt",
+    "Blade Ward",
+    "Lightning Lure",
+    "Ray of Frost",
+    "Prestidigitation",
+    "Friends",
+    "Shape Water",
+    "Mold Earth"
+  ],
+  "Spells": [
+    "Absorb Elements - Spell level 1",
+    "Chaos Bolt - Spell level 1",
+    "Infallible Relay (UA) - Spell level 1",
+    "Burning Hands - Spell level 1",
+    "Silent Image - Spell level 1",
+    "Shield - Spell level 1",
+    "Detect Magic - Spell level 1",
+    "Witch Bolt - Spell level 1"
+  ]
+}

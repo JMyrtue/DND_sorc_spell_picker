@@ -1,4 +1,5 @@
-﻿using Xunit.Sdk;
+﻿using spell_randomizer;
+using Xunit.Sdk;
 
 namespace spell_randomizer_test
 {

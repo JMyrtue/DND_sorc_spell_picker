@@ -1,6 +1,5 @@
 ﻿public class MagicManager
 {
-    public MagicManager() { }
     public string GetUniqueSpell(int index)
     {
         return index switch
@@ -230,7 +229,7 @@
             223 => "Psychic Scream - Spell level 9",
             224 => "Time Stop - Spell level 9",
             225 => "Wish - Spell level 9",
-            _ => throw new Exception("Invalid index provided for spellretrival")
+            _ => throw new Exception("Invalid index provided for spell  retrival")
         };
     }
 
