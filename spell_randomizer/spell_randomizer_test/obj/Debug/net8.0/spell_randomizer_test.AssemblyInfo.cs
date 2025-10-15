@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("spell_randomizer_test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbd7367f21f4c8b8c3304f9db29bb1fd915c3b57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8aa14975804bae1c949f85178100d7b8172cfd4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("spell_randomizer_test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("spell_randomizer_test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

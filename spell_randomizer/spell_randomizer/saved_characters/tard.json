@@ -1,0 +1,50 @@
+{
+  "Name": "tard",
+  "Level": 8,
+  "CantripsTotal": 5,
+  "SpellsTotal": 9,
+  "SpellTableUpperBoundIndex": 151,
+  "WildMagicCounter": 1,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 8,
+  "SpellSlotsTotal": [
+    4,
+    3,
+    3,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpellSlotsUsed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Cantrips": [
+    "Fire Bolt",
+    "Chill Touch",
+    "Frostbite",
+    "Minor Illusion",
+    "Sword Burst"
+  ],
+  "Spells": [
+    "Haywire (UA) - Spell level 3",
+    "Greater Invisibility - Spell level 4",
+    "Stinking Cloud - Spell level 3",
+    "Vortex Warp - Spell level 2",
+    "Warding Wind - Spell level 2",
+    "Raulothim\u0027s Psychic Lance - Spell level 4",
+    "Summon Warrior Spirit (UA) - Spell level 3",
+    "Darkvision - Spell level 2",
+    "Kinetic Jaunt - Spell level 2"
+  ]
+}
