@@ -1,0 +1,48 @@
+{
+  "Name": "Roberto",
+  "Level": 6,
+  "CantripsTotal": 5,
+  "SpellsTotal": 7,
+  "SpellTableUpperBoundIndex": 127,
+  "WildMagicCounter": 1,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 6,
+  "SpellSlotsTotal": [
+    4,
+    3,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpellSlotsUsed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Cantrips": [
+    "Gust",
+    "Sword Burst",
+    "Thunderclap",
+    "ON/OFF (UA)",
+    "Booming Blade"
+  ],
+  "Spells": [
+    "Dust Devil - Spell level 2",
+    "Fireball - Spell level 3",
+    "Sleet Storm - Spell level 3",
+    "Feather Fall - Spell level 1",
+    "Hold Person - Spell level 2",
+    "Detect Magic - Spell level 1",
+    "Silent Image - Spell level 1"
+  ]
+}
