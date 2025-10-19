@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer_test/spell_randomizer_test.csproj": {}
+    "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj": {}
   },
   "projects": {
-    "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj": {
+    "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj",
+        "projectUniqueName": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
         "projectName": "spell_randomizer",
-        "projectPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj",
-        "packagesPath": "/home/jonathan/.nuget/packages/",
-        "outputPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/obj/",
+        "projectPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
+        "packagesPath": "C:\\Users\\toyot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jonathan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\toyot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,13 +40,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -56,46 +56,46 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.21, 8.0.21]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer_test/spell_randomizer_test.csproj": {
+    "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer_test/spell_randomizer_test.csproj",
+        "projectUniqueName": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj",
         "projectName": "spell_randomizer_test",
-        "projectPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer_test/spell_randomizer_test.csproj",
-        "packagesPath": "/home/jonathan/.nuget/packages/",
-        "outputPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer_test/obj/",
+        "projectPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\spell_randomizer_test.csproj",
+        "packagesPath": "C:\\Users\\toyot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer_test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jonathan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\toyot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj": {
-                "projectPath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj"
+              "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj": {
+                "projectPath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj"
               }
             }
           }
@@ -104,13 +104,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -153,7 +147,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

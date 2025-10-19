@@ -5,7 +5,7 @@
   "SpellsTotal": 7,
   "SpellTableUpperBoundIndex": 127,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": 0,
+  "SorcPointsUsed": 1,
   "MaxSorcPoints": 6,
   "SpellSlotsTotal": [
     4,
@@ -19,9 +19,9 @@
     0
   ],
   "SpellSlotsUsed": [
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
