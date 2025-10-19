@@ -170,6 +170,7 @@ public class Player {
         {
             SorcPointsUsed += sorcPointsNeeded;
             SpellSlotsUsed[spellSlot - 1]--;
+            Console.WriteLine("{0} sorcery points converted to level {1} spellslot!", sorcPointsNeeded, spellSlot);
         }
 
     }
@@ -184,7 +185,9 @@ public class Player {
         else
         {
             SpellSlotsUsed[spellSlot - 1]++;
-            SorcPointsUsed -= SlotToPointConversion(spellSlot);
+            var sorc_points = SlotToPointConversion(spellSlot);
+            SorcPointsUsed -= sorc_points;
+            Console.WriteLine("Level {0} spellslot converted to {1} sorcery points!", spellSlot , sorc_points);
         }
     }
 

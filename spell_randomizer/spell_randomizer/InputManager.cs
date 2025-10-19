@@ -62,8 +62,9 @@ public class InputManager
 
             return Convert.ToInt32(input[1]);
         }
-
-        return 0; 
+        
+        
+        return input.Length < 2 ? 0 : Convert.ToInt32(input[1]);
     }
     
     private bool DetermineAction(string action, int parameter)

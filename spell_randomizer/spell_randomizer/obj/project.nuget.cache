@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "I0WfGOWYqAbmvfTis2ET0Y0c2PQhRWmzT5ay11N6gD6QzpKsUIfV8JsAv82OqEtVj3lzYfH5lZVFo9+qwp1R9Q==",
+  "dgSpecHash": "0Y0T86PXfnE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\toyot\\OneDrive\\Dokumenter\\Gitrepose\\DND_sorc_spell_picker\\spell_randomizer\\spell_randomizer\\spell_randomizer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/spell_randomizer.csproj",
+  "expectedPackageFiles": [
+    "/home/jonathan/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.21/microsoft.netcore.app.host.linux-x64.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

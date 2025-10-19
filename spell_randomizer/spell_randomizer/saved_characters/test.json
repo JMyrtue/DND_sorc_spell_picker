@@ -5,7 +5,7 @@
   "SpellsTotal": 9,
   "SpellTableUpperBoundIndex": 151,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": 0,
+  "SorcPointsUsed": -4,
   "MaxSorcPoints": 8,
   "SpellSlotsTotal": [
     4,
@@ -19,10 +19,10 @@
     0
   ],
   "SpellSlotsUsed": [
+    -1,
     0,
     0,
-    0,
-    0,
+    1,
     0,
     0,
     0,
@@ -30,19 +30,21 @@
     0
   ],
   "Cantrips": [
-    "Blade Ward",
-    "Infestation",
-    "Booming Blade",
-    "Mold Earth",
-    "Create Bonfire"
+    "Shape Water",
+    "Green-Flame Blade",
+    "Poison Spray",
+    "Frostbite",
+    "Booming Blade"
   ],
   "Spells": [
-    "Phantasmal Force - Spell level 2",
-    "Dispel Magic - Spell level 3",
-    "Chromatic Orb - Spell level 1",
-    "Mage Armor - Spell level 1",
-    "Find Vehicle (UA) - Spell level 2",
-    "Maximillian\u0027s Earthen Grasp - Spell level 2",
-    "Mind Spike - Spell level 2"
+    "Silent Image - Spell level 1",
+    "Knock - Spell level 2",
+    "Kinetic Jaunt - Spell level 2",
+    "Dimension Door - Spell level 4",
+    "Major Image - Spell level 3",
+    "Polymorph - Spell level 4",
+    "Air Bubble - Spell level 2",
+    "Dominate Beast - Spell level 4",
+    "Banishment - Spell level 4"
   ]
 }
