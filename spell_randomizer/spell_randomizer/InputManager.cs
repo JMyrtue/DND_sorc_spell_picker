@@ -41,7 +41,6 @@ public class InputManager
                 Console.WriteLine("Missing spellslots level!");
                 return 1337;
             }
-
             var parameter = Convert.ToInt32(input[1]);
             if (parameter > 5 || parameter < 1)
             {
@@ -49,7 +48,6 @@ public class InputManager
                     "Invalid level provided for Flexibility Casting - can only convert between spell slots of level 1-5.");
                 return 1337;
             }
-
         }
 
         if (action == "mm" || action  == "metamagic")
@@ -59,11 +57,8 @@ public class InputManager
                 Console.WriteLine("Missing cost of metamagic!");
                 return 1337;
             }
-
             return Convert.ToInt32(input[1]);
         }
-        
-        
         return input.Length < 2 ? 0 : Convert.ToInt32(input[1]);
     }
     

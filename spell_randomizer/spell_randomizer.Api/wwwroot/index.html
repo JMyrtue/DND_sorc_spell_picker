@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing">
+        <h1>🎲 D&D Character Manager</h1>
+        <div class="input-group">
+            <input type="text" id="characterName" placeholder="Enter character name">
+            <div id="error" class="error"></div>
+        </div>
+        <div class="button-group">
+            <button class="btn-primary" onclick="loadCharacter()">Load Character</button>
+            <button class="btn-secondary" onclick="createCharacter()">Create New Character</button>
+        </div>
+    </div>
+
+    <!-- Character Sheet -->
+    <div id="characterSheet" class="character-sheet">
+        <div class="character-header">
+            <h2 class="character-name" id="charName"></h2>
+            <button class="btn-danger" onclick="backToStart()">Back</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-label">Level</div>
+                <div class="stat-value" id="level">1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Sorcery Points</div>
+                <div class="stat-value"><span id="sorcPointsUsed">0</span> / <span id="maxSorcPoints">0</span></div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Wild Magic Counter</div>
+                <div class="stat-value" id="wildMagicCounter">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Cantrips Known</div>
+                <div class="stat-value"><span id="cantripsKnown">0</span> / <span id="cantripsTotal">0</span></div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Spells Known</div>
+                <div class="stat-value"><span id="spellsKnown">0</span> / <span id="spellsTotal">0</span></div>
+            </div>
+        </div>
+
+        <div class="spell-slots">
+            <h3>Spell Slots</h3>
+            <div id="spellSlotsContainer"></div>
+        </div>
+
+        <div class="lists-section">
+            <div class="list-box">
+                <h3>Cantrips</h3>
+                <div id="cantripsList" class="spell-list"></div>
+            </div>
+            <div class="list-box">
+                <h3>Spells</h3>
+                <div id="spellsList" class="spell-list"></div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-primary" onclick="longRest()">Long Rest</button>
+            <button class="btn-secondary" onclick="shortRest()">Short Rest</button>
+            <button class="btn-primary" onclick="incrementWildMagic()">Wild Magic +1</button>
+            <button class="btn-danger" onclick="resetWildMagic()">Reset Wild Magic</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentCharacter = null;
+    const API_BASE = '/api'; // Update this to your API endpoint
+
+    function showError(message) {
+        document.getElementById('error').textContent = message;
+    }
+
+    function clearError() {
+        document.getElementById('error').textContent = '';
+    }
+
+    async function loadCharacter() {
+        const name = document.getElementById('characterName').value.trim();
+        if (!name) {
+            showError('Please enter a character name');
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE}/character/${encodeURIComponent(name)}`);
+            if (response.ok) {
+                currentCharacter = await response.json();
+                displayCharacterSheet();
+            } else {
+                showError('Character not found');
+            }
+        } catch (error) {
+            showError('Error loading character: ' + error.message);
+        }
+    }
+
+    async function createCharacter() {
+        const name = document.getElementById('characterName').value.trim();
+        if (!name) {
+            showError('Please enter a character name');
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE}/character`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name })
+            });
+
+            if (response.ok) {
+                currentCharacter = await response.json();
+                displayCharacterSheet();
+            } else {
+                showError('Error creating character');
+            }
+        } catch (error) {
+            // For demo purposes, create a default character
+            currentCharacter = createDefaultCharacter(name);
+            displayCharacterSheet();
+        }
+    }
+
+    function createDefaultCharacter(name) {
+        return {
+            name: name,
+            level: 1,
+            cantripsTotal: 4,
+            spellsTotal: 2,
+            spellTableUpperBoundIndex: 1,
+            wildMagicCounter: 0,
+            sorcPointsUsed: 0,
+            maxSorcPoints: 1,
+            spellSlotsTotal: [2, 0, 0, 0, 0, 0, 0, 0, 0],
+            spellSlotsUsed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            cantrips: [],
+            spells: []
+        };
+    }
+
+    function displayCharacterSheet() {
+        clearError();
+        document.getElementById('landingPage').style.display = 'none';
+        document.getElementById('characterSheet').style.display = 'block';
+
+        document.getElementById('charName').textContent = currentCharacter.name;
+        document.getElementById('level').textContent = currentCharacter.level;
+        document.getElementById('sorcPointsUsed').textContent = currentCharacter.sorcPointsUsed;
+        document.getElementById('maxSorcPoints').textContent = currentCharacter.maxSorcPoints;
+        document.getElementById('wildMagicCounter').textContent = currentCharacter.wildMagicCounter;
+        document.getElementById('cantripsKnown').textContent = currentCharacter.cantrips.length;
+        document.getElementById('cantripsTotal').textContent = currentCharacter.cantripsTotal;
+        document.getElementById('spellsKnown').textContent = currentCharacter.spells.length;
+        document.getElementById('spellsTotal').textContent = currentCharacter.spellsTotal;
+
+        renderSpellSlots();
+        renderLists();
+    }
+
+    function renderSpellSlots() {
+        const container = document.getElementById('spellSlotsContainer');
+        container.innerHTML = '';
+
+        for (let i = 0; i < currentCharacter.spellSlotsTotal.length; i++) {
+            const total = currentCharacter.spellSlotsTotal[i];
+            if (total === 0) continue;
+
+            const row = document.createElement('div');
+            row.className = 'slot-row';
+
+            const label = document.createElement('div');
+            label.className = 'slot-label';
+            label.textContent = `Level ${i + 1}:`;
+            row.appendChild(label);
+
+            const circles = document.createElement('div');
+            circles.className = 'slot-circles';
+
+            for (let j = 0; j < total; j++) {
+                const circle = document.createElement('div');
+                circle.className = 'slot-circle';
+                if (j < currentCharacter.spellSlotsUsed[i]) {
+                    circle.classList.add('used');
+                }
+                circle.onclick = () => toggleSpellSlot(i, j);
+                circles.appendChild(circle);
+            }
+
+            row.appendChild(circles);
+            container.appendChild(row);
+        }
+    }
+
+    function toggleSpellSlot(level, index) {
+        if (index < currentCharacter.spellSlotsUsed[level]) {
+            currentCharacter.spellSlotsUsed[level] = index;
+        } else {
+            currentCharacter.spellSlotsUsed[level] = index + 1;
+        }
+        renderSpellSlots();
+        saveCharacter();
+    }
+
+    function renderLists() {
+        const cantripsList = document.getElementById('cantripsList');
+        const spellsList = document.getElementById('spellsList');
+
+        cantripsList.innerHTML = currentCharacter.cantrips.length > 0
+            ? currentCharacter.cantrips.map(c => `<div class="spell-item">${c}</div>`).join('')
+            : '<div style="color: #999;">No cantrips learned</div>';
+
+        spellsList.innerHTML = currentCharacter.spells.length > 0
+            ? currentCharacter.spells.map(s => `<div class="spell-item">${s}</div>`).join('')
+            : '<div style="color: #999;">No spells learned</div>';
+    }
+
+    function longRest() {
+        for (let i = 0; i < currentCharacter.spellSlotsUsed.length; i++) {
+            currentCharacter.spellSlotsUsed[i] = 0;
+        }
+        currentCharacter.sorcPointsUsed = 0;
+        displayCharacterSheet();
+        saveCharacter();
+    }
+
+    function shortRest() {
+        // Implement short rest logic as needed
+        alert('Short rest completed');
+    }
+
+    function incrementWildMagic() {
+        currentCharacter.wildMagicCounter++;
+        document.getElementById('wildMagicCounter').textContent = currentCharacter.wildMagicCounter;
+        saveCharacter();
+    }
+
+    function resetWildMagic() {
+        currentCharacter.wildMagicCounter = 0;
+        document.getElementById('wildMagicCounter').textContent = currentCharacter.wildMagicCounter;
+        saveCharacter();
+    }
+
+    function backToStart() {
+        document.getElementById('characterSheet').style.display = 'none';
+        document.getElementById('landingPage').style.display = 'block';
+        document.getElementById('characterName').value = '';
+        currentCharacter = null;
+    }
+
+    async function saveCharacter() {
+        try {
+            await fetch(`${API_BASE}/character/${encodeURIComponent(currentCharacter.name)}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(currentCharacter)
+            });
+        } catch (error) {
+            console.error('Error saving character:', error);
+        }
+    }
+</script>
+</body>
+</html>
