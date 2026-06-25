@@ -1,17 +1,17 @@
 {
   "Name": "Roberto",
-  "Level": 6,
+  "Level": 7,
   "CantripsTotal": 5,
-  "SpellsTotal": 7,
-  "SpellTableUpperBoundIndex": 127,
+  "SpellsTotal": 8,
+  "SpellTableUpperBoundIndex": 151,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": 1,
-  "MaxSorcPoints": 6,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 7,
   "SpellSlotsTotal": [
     4,
     3,
     3,
-    0,
+    1,
     0,
     0,
     0,
@@ -19,9 +19,9 @@
     0
   ],
   "SpellSlotsUsed": [
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -30,19 +30,20 @@
     0
   ],
   "Cantrips": [
-    "Gust",
-    "Sword Burst",
-    "Thunderclap",
-    "ON/OFF (UA)",
-    "Booming Blade"
+    "True Strike",
+    "Green-Flame Blade",
+    "Mage Hand",
+    "Dancing Lights",
+    "Lightning Lure"
   ],
   "Spells": [
-    "Dust Devil - Spell level 2",
-    "Fireball - Spell level 3",
-    "Sleet Storm - Spell level 3",
-    "Feather Fall - Spell level 1",
-    "Hold Person - Spell level 2",
-    "Detect Magic - Spell level 1",
-    "Silent Image - Spell level 1"
+    "Darkness - Spell level 2",
+    "Blur - Spell level 2",
+    "Ice Knife - Spell level 1",
+    "Grease - Spell level 1",
+    "Banishment - Spell level 4",
+    "Counterspell - Spell level 3",
+    "Watery Sphere - Spell level 4",
+    "Major Image - Spell level 3"
   ]
 }
