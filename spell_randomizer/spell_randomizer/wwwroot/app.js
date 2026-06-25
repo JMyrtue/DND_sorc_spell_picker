@@ -12,7 +12,6 @@ async function fetchCharacterData() {
         const response = await fetch('/api/character');
         
         if (response.status === 404) {
-            // No character loaded, redirect to selection screen
             window.location.href = 'index.html';
             return;
         }
@@ -25,10 +24,34 @@ async function fetchCharacterData() {
         updateCantrips(data.cantrips);
         updateSpells(data.spells);
         updateSpellSlots(data.spellSlots);
+        
+        // Adjust UI after data is loaded and rendered
+        setTimeout(adjustDescriptionBoxHeight, 0);
     } catch (error) {
         console.error('Could not fetch character data:', error);
     }
 }
+
+function adjustDescriptionBoxHeight() {
+    const leftColumn = document.getElementById('character-sheet');
+    const actionsBox = document.getElementById('actions');
+    const descriptionBox = document.getElementById('spell-description');
+    const descriptionContainer = document.getElementById('spell-description-container');
+
+    // Total height of the left column
+    const leftHeight = leftColumn.offsetHeight;
+    
+    // Height of the elements *above* the description container in the right column
+    const actionsHeight = actionsBox.offsetHeight;
+    
+    // Calculate the available height for the description container
+    // We subtract the height of the actions box and a buffer for margins/padding
+    const availableHeight = leftHeight - actionsHeight - 120; // Adjusted buffer
+
+    descriptionContainer.style.height = `${availableHeight}px`;
+    descriptionBox.style.height = '100%'; // Make the inner box fill the container
+}
+
 
 function updateCharacterInfo(data) {
     document.getElementById('character-name').textContent = data.name;
@@ -54,7 +77,6 @@ function updateSpells(spells) {
     let lastLevel = -1;
 
     spells.forEach(spell => {
-        // Add a header for each new spell level
         if (spell.level !== lastLevel) {
             const header = document.createElement('li');
             header.classList.add('spell-level-header');
@@ -83,34 +105,33 @@ function updateSpellSlots(spellSlots) {
             const levelNum = parseInt(level.replace('Level ', ''));
 
             const p = document.createElement('p');
-            p.classList.add('spell-slot-row');
+p.classList.add('spell-slot-row');
 
-            const text = document.createElement('span');
-            text.textContent = `${level}: ${slotInfo.available} of ${slotInfo.total}`;
-            p.appendChild(text);
+const text = document.createElement('span');
+text.textContent = `${level}: ${slotInfo.available} of ${slotInfo.total}`;
+p.appendChild(text);
 
-            if (levelNum <= 5) { // Can only convert slots of level 1-5
-                const minusButton = document.createElement('button');
-                minusButton.textContent = '-';
-                minusButton.classList.add('plus-minus-button');
-                minusButton.addEventListener('click', () => convertSlotsToPoints(levelNum));
-                p.appendChild(minusButton);
+if (levelNum <= 5) {
+    const minusButton = document.createElement('button');
+    minusButton.textContent = '-';
+    minusButton.classList.add('plus-minus-button');
+    minusButton.addEventListener('click', () => convertSlotsToPoints(levelNum));
+    p.appendChild(minusButton);
 
-                const plusButton = document.createElement('button');
-                plusButton.textContent = '+';
-                plusButton.classList.add('plus-minus-button');
-                plusButton.addEventListener('click', () => convertPointsToSlots(levelNum));
-                p.appendChild(plusButton);
-            }
-            
-            spellSlotsDiv.appendChild(p);
+    const plusButton = document.createElement('button');
+    plusButton.textContent = '+';
+    plusButton.classList.add('plus-minus-button');
+    plusButton.addEventListener('click', () => convertPointsToSlots(levelNum));
+    p.appendChild(plusButton);
+}
 
-            // Create a "Cast" button for this level
+spellSlotsDiv.appendChild(p);
+
             const button = document.createElement('button');
             button.textContent = `Cast Level ${levelNum}`;
             button.addEventListener('click', () => handleCastSpellClick(levelNum));
             if (slotInfo.available === 0) {
-                button.disabled = true; // Disable button if no slots are available
+                button.disabled = true;
             }
             castSpellButtonsDiv.appendChild(button);
         }
@@ -129,14 +150,13 @@ async function showSpellDescription(spell) {
             if (response.ok) {
                 const spellDetails = await response.json();
                 description = spellDetails.description;
-                spell.description = description; // Cache description
+                spell.description = description;
             }
         } catch (error) {
             console.error('Could not fetch spell description:', error);
         }
     }
 
-    // The description is now HTML, so we can set it directly
     spellDescriptionDiv.innerHTML = `<h3>${spell.name}</h3>${description}`;
 }
 
@@ -148,10 +168,10 @@ function askWildMagicSurge(currentCounter) {
         const noButton = document.getElementById('surge-no-button');
 
         textElement.innerHTML = `Your current Wild Magic Surge Threshold is <strong>${currentCounter}</strong>.<br><br>Did a Wild Magic Surge occur on this cast?`;
-        modal.style.display = 'flex'; // Show modal
+        modal.style.display = 'flex';
 
         const handleChoice = (result) => {
-            modal.style.display = 'none'; // Hide modal
+            modal.style.display = 'none';
             yesButton.removeEventListener('click', onYes);
             noButton.removeEventListener('click', onNo);
             resolve(result);

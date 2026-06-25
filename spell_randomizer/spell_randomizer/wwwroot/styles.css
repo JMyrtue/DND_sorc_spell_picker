@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
     margin: 0;
     padding: 20px;
 }
@@ -15,15 +15,16 @@ body {
 }
 
 #character-sheet, #controls {
-    background: #fff;
+    background: #2c2c2c; /* Slightly lighter dark for cards */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border: 1px solid #444;
 }
 
 h1, h2 {
-    color: #5a2a94;
-    border-bottom: 2px solid #5a2a94;
+    color: #bb86fc; /* A nice purple for dark mode */
+    border-bottom: 2px solid #bb86fc;
     padding-bottom: 10px;
 }
 
@@ -39,27 +40,27 @@ h1, h2 {
 
 #cantrip-list li, #spell-list li {
     padding: 8px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 #cantrip-list li:hover, #spell-list li:hover {
-    background-color: #e9d8f2;
+    background-color: #3a3a3a;
 }
 
 .spell-level-header {
     font-weight: bold;
-    color: #5a2a94;
-    background-color: #f4f4f4;
+    color: #bb86fc;
+    background-color: #1f1f1f;
     padding: 10px 8px;
     margin-top: 10px;
-    border-bottom: 2px solid #e9d8f2;
+    border-bottom: 2px solid #3a3a3a;
     cursor: default !important;
 }
 
 .spell-level-header:hover {
-    background-color: #f4f4f4 !important;
+    background-color: #1f1f1f !important;
 }
 
 .spell-slot-row {
@@ -75,14 +76,14 @@ h1, h2 {
 .plus-minus-button {
     padding: 2px 8px;
     margin-left: 5px;
-    background-color: #e9d8f2;
-    color: #5a2a94;
-    border: 1px solid #5a2a94;
+    background-color: #3a3a3a;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
     font-weight: bold;
 }
 
 .plus-minus-button:hover {
-    background-color: #d1b3e8;
+    background-color: #4a4a4a;
 }
 
 #actions div {
@@ -92,47 +93,53 @@ h1, h2 {
 input[type="number"] {
     width: calc(100% - 120px);
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 4px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
 }
 
 button {
     padding: 8px 15px;
-    background-color: #5a2a94;
-    color: white;
+    background-color: #bb86fc;
+    color: #121212;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #48227a;
+    background-color: #a362ff;
 }
 
 button:disabled {
-    background-color: #cccccc;
+    background-color: #555;
+    color: #888;
     cursor: not-allowed;
 }
 
 #spell-description-container {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #spell-description {
-    background: #f9f9f9;
+    background: #222;
     padding: 15px;
     border-radius: 4px;
-    height: 500px; /* Increased height */
     overflow-y: auto; /* Add scrollbar if content overflows */
+    border: 1px solid #444;
+    flex-grow: 1;
 }
 
 .spell-metadata {
     font-style: italic;
-    color: #888; /* Lighter gray color */
+    color: #aaa; /* Lighter gray for metadata */
 }
 
-/* Force remove margins from any paragraphs within the description box */
 #spell-description p {
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -140,9 +147,8 @@ button:disabled {
 
 .spell-main-description p {
     margin-top: 0;
-    margin-bottom: 1em; /* Give main description paragraphs some space */
+    margin-bottom: 1em;
 }
-
 
 /* Modal Styles */
 .modal-overlay {
@@ -151,7 +157,7 @@ button:disabled {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,12 +165,13 @@ button:disabled {
 }
 
 .modal-content {
-    background: #fff;
+    background: #2c2c2c;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     text-align: center;
     max-width: 400px;
+    border: 1px solid #555;
 }
 
 .modal-buttons {

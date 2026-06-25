@@ -9,25 +9,29 @@
         .selection-container {
             max-width: 600px;
             margin: 50px auto;
-            background: #fff;
+            background: #2c2c2c; /* Dark background for container */
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            border: 1px solid #444;
         }
         .form-group {
             margin-bottom: 20px;
         }
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
+            background-color: #3a3a3a;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
+        hr {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -52,6 +56,6 @@
         </div>
     </div>
 
-    <script src="character-selection.js?v=1.1"></script>
+    <script src="character-selection.js?v=1.2"></script>
 </body>
 </html>
