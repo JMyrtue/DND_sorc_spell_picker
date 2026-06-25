@@ -120,6 +120,14 @@ button:disabled {
     cursor: not-allowed;
 }
 
+#save-button {
+    background-color: #03dac6; /* A teal/green color */
+}
+
+#save-button:hover {
+    background-color: #018786;
+}
+
 #spell-description-container {
     margin-top: 20px;
     display: flex;

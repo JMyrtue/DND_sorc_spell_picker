@@ -60,7 +60,10 @@ namespace spell_randomizer.Controllers
         [HttpPost("character/save")]
         public IActionResult SaveCharacter()
         {
-            if (_player == null) return BadRequest("No active character to save.");
+            if (_player == null)
+            {
+                return BadRequest("No active character to save.");
+            }
             _player.Save();
             return Ok();
         }

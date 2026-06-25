@@ -137,6 +137,17 @@ public class MagicManager
         }
         return _cantrips[index - 1];
     }
+    
+    public Spell? GetSpellByName(string name)
+    {
+        var spell = _spells.FirstOrDefault(s => s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        if (spell != null)
+        {
+            return spell;
+        }
+
+        return _cantrips.FirstOrDefault(s => s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+    }
 
     public async Task<string> GetSpellDescription(Spell spell)
     {

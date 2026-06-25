@@ -11,47 +11,35 @@ public class LevelChangeManager{
 
     public int GetSpellsIndexUpperBound(int level)
     {
-        // Determine the maximum spell level a sorcerer of a given level can cast.
-        int maxSpellLevel;
-        if (level >= 17) maxSpellLevel = 9;
-        else if (level >= 15) maxSpellLevel = 8;
-        else if (level >= 13) maxSpellLevel = 7;
-        else if (level >= 11) maxSpellLevel = 6;
-        else if (level >= 9) maxSpellLevel = 5;
-        else if (level >= 7) maxSpellLevel = 4;
-        else if (level >= 5) maxSpellLevel = 3;
-        else if (level >= 3) maxSpellLevel = 2;
-        else maxSpellLevel = 1;
-
+        int maxSpellLevel = level switch
+        {
+            >= 17 => 9,
+            >= 15 => 8,
+            >= 13 => 7,
+            >= 11 => 6,
+            >= 9 => 5,
+            >= 7 => 4,
+            >= 5 => 3,
+            >= 3 => 2,
+            _ => 1
+        };
         return _magicManager.GetSpellsIndexUpperBound(maxSpellLevel);
     }
 
     public int GetCantripsTotal(int level)
     {
-        int temp;
-
-        if (level >= 1 && level < 4)
+        return level switch
         {
-            temp = 4;
-        }
-        else if (level >= 4 && level < 10)
-        {
-            temp = 5;
-        }
-        else if (level >= 10 && level <= 20)
-        {
-            temp = 6;
-        }
-        else
-        {
-            throw new Exception("Unvalid level provided");
-        }
-        return temp;
+            >= 10 => 6,
+            >= 4 => 5,
+            >= 1 => 4,
+            _ => throw new Exception("Unvalid level provided")
+        };
     }
 
     public int GetSpellsTotal(int level)
     {
-        var totalSpells = level switch
+        return level switch
         {
             1 => 2,
             2 => 3,
@@ -66,91 +54,38 @@ public class LevelChangeManager{
             11 or 12 => 12,
             13 or 14 => 13,
             15 or 16 => 14,
-            17 or 18 or 19 or 20 => 15,
+            >= 17 => 15,
             _ => throw new Exception("Undefined level"),
         };
-        return totalSpells;
     }
 
     public void SetSpellSlots(int level, int[] spellSlotsTotal)
     {
-        switch (level) //Each case shortend to only change the spell slots, that could be affected from leveling up or down
+        // Reset all slots to 0 before setting them.
+        for (int i = 0; i < spellSlotsTotal.Length; i++)
         {
-            case 1:
-                spellSlotsTotal[0] = 2;
-                break;
-            case 2:
-                spellSlotsTotal[0] = 3;
-                spellSlotsTotal[1] = 0;
-                break;
-            case 3:
-                spellSlotsTotal[0] = 4;
-                spellSlotsTotal[1] = 2;
-                break;
-            case 4:
-                spellSlotsTotal[1] = 3;
-                spellSlotsTotal[2] = 0;
-                break;
-            case 5:
-                spellSlotsTotal[2] = 2;
-                break;
-            case 6:
-                spellSlotsTotal[2] = 3;
-                spellSlotsTotal[3] = 0;
-                break;
-            case 7:
-                spellSlotsTotal[3] = 1;
-                break;
-            case 8:
-                spellSlotsTotal[3] = 2;
-                spellSlotsTotal[4] = 0;
-                break;
-            case 9:
-                spellSlotsTotal[3] = 3;
-                spellSlotsTotal[4] = 1;
-                break;
-            case 10:
-                spellSlotsTotal[4] = 2;
-                spellSlotsTotal[5] = 0;
-                break;
-            case 11:
-                spellSlotsTotal[5] = 1;
-                break;
-            case 12:
-                spellSlotsTotal[6] = 0;
-                break;
-            case 13:
-                spellSlotsTotal[6] = 1;
-                break;
-            case 14:
-                spellSlotsTotal[7] = 0;
-                break;
-            case 15:
-                spellSlotsTotal[7] = 1;
-                break;
-            case 16:
-                spellSlotsTotal[8] = 0;
-                break;
-            case 17:
-                spellSlotsTotal[4] = 2;
-                spellSlotsTotal[8] = 1;
-                break;
-            case 18:
-                spellSlotsTotal[4] = 3;
-                spellSlotsTotal[5] = 1;
-                break;
-            case 19:
-                spellSlotsTotal[5] = 2;
-                spellSlotsTotal[6] = 1;
-                break;
-            case 20:
-                spellSlotsTotal[6] = 2;
-                break;
-            default: throw new Exception(string.Format("Invalid level: {0} used for getting spellSlots", level));
+            spellSlotsTotal[i] = 0;
         }
 
-
+        if (level >= 1) spellSlotsTotal[0] = 2;
+        if (level >= 2) spellSlotsTotal[0] = 3;
+        if (level >= 3) { spellSlotsTotal[0] = 4; spellSlotsTotal[1] = 2; }
+        if (level >= 4) spellSlotsTotal[1] = 3;
+        if (level >= 5) spellSlotsTotal[2] = 2;
+        if (level >= 6) spellSlotsTotal[2] = 3;
+        if (level >= 7) spellSlotsTotal[3] = 1;
+        if (level >= 8) spellSlotsTotal[3] = 2;
+        if (level >= 9) { spellSlotsTotal[3] = 3; spellSlotsTotal[4] = 1; }
+        if (level >= 10) spellSlotsTotal[4] = 2;
+        if (level >= 11) spellSlotsTotal[5] = 1;
+        if (level >= 13) spellSlotsTotal[6] = 1;
+        if (level >= 15) spellSlotsTotal[7] = 1;
+        if (level >= 17) spellSlotsTotal[8] = 1;
+        if (level >= 18) spellSlotsTotal[4] = 3;
+        if (level >= 19) spellSlotsTotal[5] = 2;
+        if (level >= 20) spellSlotsTotal[6] = 2;
     }
+
     public int GetMaxSorcPoints(int level)
     {
         return level switch

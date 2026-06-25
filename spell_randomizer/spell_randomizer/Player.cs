@@ -151,9 +151,9 @@ public class Player {
         else
         {
             SpellSlotsUsed[spellSlot - 1]++;
-            var sorc_points = SlotToPointConversion(spellSlot);
-            SorcPointsUsed -= sorc_points;
-            return new ActionResult(true, $"Level {spellSlot} spellslot converted to {sorc_points} sorcery points!");
+            var sorcPoints = SlotToPointConversion(spellSlot);
+            SorcPointsUsed -= sorcPoints;
+            return new ActionResult(true, $"Level {spellSlot} spellslot converted to {sorcPoints} sorcery points!");
         }
     }
 
@@ -195,21 +195,22 @@ public class Player {
             throw new FileNotFoundException("Save file not found.", playerName);
 
         string json = File.ReadAllText(filepath);
+        
         Player? player = JsonSerializer.Deserialize<Player>(json);
 
         if (player == null)
             throw new Exception("Failed to deserialize player data.");
 
-        // Manually initialize the managers since the constructor isn't called on deserialization
         player._randomizer = new Random();
         player._magicManager = new MagicManager();
         player._levelManager = new LevelChangeManager(player._magicManager);
+        
+        player.SpellTableUpperBoundIndex = player._levelManager.GetSpellsIndexUpperBound(player.Level);
 
-        // If spells list is empty or any spell is missing a URL, it's an old/invalid save file.
-        if ((player.Spells.Count == 0 && player.SpellsTotal > 0) || player.Spells.Any(s => string.IsNullOrEmpty(s.Url)))
+
+        if (player.Spells.Any(s => string.IsNullOrEmpty(s.Url)))
         {
-            player.GetSpells();
-            player.GetCantrips();
+            player.UpdateSpells();
         }
 
         return player;
@@ -276,6 +277,29 @@ public class Player {
             if (spell != null)
             {
                 Spells.Add(spell);
+            }
+        }
+    }
+    
+    private void UpdateSpells()
+    {
+        var spellsToUpdate = Spells.Where(s => string.IsNullOrEmpty(s.Url)).ToList();
+        foreach (var spell in spellsToUpdate)
+        {
+            var matchedSpell = _magicManager.GetSpellByName(spell.Name);
+            if (matchedSpell != null)
+            {
+                spell.Url = matchedSpell.Url;
+            }
+        }
+
+        var cantripsToUpdate = Cantrips.Where(s => string.IsNullOrEmpty(s.Url)).ToList();
+        foreach (var cantrip in cantripsToUpdate)
+        {
+            var matchedCantrip = _magicManager.GetSpellByName(cantrip.Name);
+            if (matchedCantrip != null)
+            {
+                cantrip.Url = matchedCantrip.Url;
             }
         }
     }

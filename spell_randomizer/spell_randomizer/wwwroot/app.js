@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rest-button').addEventListener('click', rest);
     document.getElementById('level-up-button').addEventListener('click', levelUp);
     document.getElementById('level-down-button').addEventListener('click', levelDown);
+    document.getElementById('save-button').addEventListener('click', saveCharacter);
 });
 
 async function fetchCharacterData() {
@@ -305,5 +306,18 @@ async function convertSlotsToPoints(level) {
         }
     } catch (error) {
         console.error('Error converting slots to points:', error);
+    }
+}
+
+async function saveCharacter() {
+    try {
+        const response = await fetch('/api/character/save', { method: 'POST' });
+        if (response.ok) {
+            alert('Character saved!');
+        } else {
+            alert('Error saving character.');
+        }
+    } catch (error) {
+        console.error('Error saving character:', error);
     }
 }

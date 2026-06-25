@@ -3,9 +3,9 @@
   "Level": 6,
   "CantripsTotal": 5,
   "SpellsTotal": 7,
-  "SpellTableUpperBoundIndex": 127,
+  "SpellTableUpperBoundIndex": 108,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": 1,
+  "SorcPointsUsed": 0,
   "MaxSorcPoints": 6,
   "SpellSlotsTotal": [
     4,
@@ -19,9 +19,9 @@
     0
   ],
   "SpellSlotsUsed": [
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -29,21 +29,80 @@
     0,
     0
   ],
-  
   "Cantrips": [
-    "Gust",
-    "Sword Burst",
-    "Thunderclap",
-    "ON/OFF (UA)",
-    "Booming Blade"
+    {
+      "name": "Dancing Lights",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dancing-lights"
+    },
+    {
+      "name": "Infestation",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:infestation"
+    },
+    {
+      "name": "Fire Bolt",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fire-bolt"
+    },
+    {
+      "name": "Sword Burst",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sword-burst"
+    },
+    {
+      "name": "Mind Sliver",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mind-sliver"
+    }
   ],
   "Spells": [
-    "Dust Devil - Spell level 2",
-    "Fireball - Spell level 3",
-    "Sleet Storm - Spell level 3",
-    "Feather Fall - Spell level 1",
-    "Hold Person - Spell level 2",
-    "Detect Magic - Spell level 1",
-    "Silent Image - Spell level 1"
+    {
+      "name": "Silent Image",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:silent-image"
+    },
+    {
+      "name": "Absorb Elements",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:absorb-elements"
+    },
+    {
+      "name": "Warp Sense",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:warp-sense"
+    },
+    {
+      "name": "Tidal Wave",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tidal-wave"
+    },
+    {
+      "name": "Snilloc\u0027s Snowball Swarm",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:snillocs-snowball-swarm"
+    },
+    {
+      "name": "Catnap",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:catnap"
+    },
+    {
+      "name": "Scorching Ray",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:scorching-ray"
+    }
   ]
 }
