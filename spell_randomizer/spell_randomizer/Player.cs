@@ -16,9 +16,9 @@ public class Player {
     public List<Spell> Cantrips { get; set; }
     public List<Spell> Spells { get; set; }
 
-    private readonly Random _randomizer;
-    private readonly MagicManager _magicManager;
-    private readonly LevelChangeManager _levelManager;
+    private Random _randomizer;
+    private MagicManager _magicManager;
+    private LevelChangeManager _levelManager;
 
     public Player()
     {
@@ -82,8 +82,8 @@ public class Player {
 
     public void LongRest()
     {
-        GetCantrips();
         GetSpells();
+        GetCantrips();
         WildMagicCounter = 1;
         SorcPointsUsed = 0;
         ResetSpellSlots();
@@ -200,8 +200,13 @@ public class Player {
         if (player == null)
             throw new Exception("Failed to deserialize player data.");
 
-        // If spells list is empty, it's an old save file, so we give it a long rest to get new spells.
-        if (player.Spells.Count == 0 && player.SpellsTotal > 0)
+        // Manually initialize the managers since the constructor isn't called on deserialization
+        player._randomizer = new Random();
+        player._magicManager = new MagicManager();
+        player._levelManager = new LevelChangeManager(player._magicManager);
+
+        // If spells list is empty or any spell is missing a URL, it's an old/invalid save file.
+        if ((player.Spells.Count == 0 && player.SpellsTotal > 0) || player.Spells.Any(s => string.IsNullOrEmpty(s.Url)))
         {
             player.GetSpells();
             player.GetCantrips();
