@@ -1,5 +1,5 @@
 {
-  "Name": "tard",
+  "Name": "newnwew",
   "Level": 1,
   "CantripsTotal": 4,
   "SpellsTotal": 2,
@@ -31,10 +31,16 @@
   ],
   "Cantrips": [
     {
-      "name": "Message",
+      "name": "Dancing Lights",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:message"
+      "url": "https://dnd5e.wikidot.com/spell:dancing-lights"
+    },
+    {
+      "name": "Shape Water",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shape-water"
     },
     {
       "name": "Gust",
@@ -43,30 +49,24 @@
       "url": "https://dnd5e.wikidot.com/spell:gust"
     },
     {
-      "name": "Minor Illusion",
+      "name": "Control Flames",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:minor-illusion"
-    },
-    {
-      "name": "Create Bonfire",
-      "level": 0,
-      "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:create-bonfire"
+      "url": "https://dnd5e.wikidot.com/spell:control-flames"
     }
   ],
   "Spells": [
     {
-      "name": "Detect Magic",
+      "name": "Sleep",
       "level": 1,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:detect-magic"
+      "url": "https://dnd5e.wikidot.com/spell:sleep"
     },
     {
-      "name": "Color Spray",
+      "name": "Expeditious Retreat",
       "level": 1,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:color-spray"
+      "url": "https://dnd5e.wikidot.com/spell:expeditious-retreat"
     }
   ]
 }

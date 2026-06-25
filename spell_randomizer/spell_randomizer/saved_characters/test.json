@@ -1,17 +1,17 @@
 {
-  "Name": "Test",
-  "Level": 8,
+  "Name": "test",
+  "Level": 6,
   "CantripsTotal": 5,
-  "SpellsTotal": 9,
-  "SpellTableUpperBoundIndex": 151,
+  "SpellsTotal": 7,
+  "SpellTableUpperBoundIndex": 131,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": -4,
-  "MaxSorcPoints": 8,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 6,
   "SpellSlotsTotal": [
     4,
     3,
     3,
-    2,
+    0,
     0,
     0,
     0,
@@ -19,10 +19,10 @@
     0
   ],
   "SpellSlotsUsed": [
-    -1,
     0,
     0,
-    1,
+    0,
+    0,
     0,
     0,
     0,
@@ -30,21 +30,79 @@
     0
   ],
   "Cantrips": [
-    "Shape Water",
-    "Green-Flame Blade",
-    "Poison Spray",
-    "Frostbite",
-    "Booming Blade"
+    {
+      "Name": "Mold Earth",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:mold-earth"
+    },
+    {
+      "Name": "Chill Touch",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:chill-touch"
+    },
+    {
+      "Name": "Mending",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:mending"
+    },
+    {
+      "Name": "Mind Sliver",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:mind-sliver"
+    },
+    {
+      "Name": "Thunderclap",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:thunderclap"
+    }
   ],
   "Spells": [
-    "Silent Image - Spell level 1",
-    "Knock - Spell level 2",
-    "Kinetic Jaunt - Spell level 2",
-    "Dimension Door - Spell level 4",
-    "Major Image - Spell level 3",
-    "Polymorph - Spell level 4",
-    "Air Bubble - Spell level 2",
-    "Dominate Beast - Spell level 4",
-    "Banishment - Spell level 4"
+    {
+      "Name": "Catnap",
+      "Level": 3,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:catnap"
+    },
+    {
+      "Name": "Chromatic Orb",
+      "Level": 1,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:chromatic-orb"
+    },
+    {
+      "Name": "See Invisibility",
+      "Level": 2,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:see-invisibility"
+    },
+    {
+      "Name": "False Life",
+      "Level": 1,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:false-life"
+    },
+    {
+      "Name": "Enhance Ability",
+      "Level": 2,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:enhance-ability"
+    },
+    {
+      "Name": "Comprehend Languages",
+      "Level": 1,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:comprehend-languages"
+    },
+    {
+      "Name": "Digital Phantom (UA)",
+      "Level": 2,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:digital-phantom"
+    }
   ]
 }

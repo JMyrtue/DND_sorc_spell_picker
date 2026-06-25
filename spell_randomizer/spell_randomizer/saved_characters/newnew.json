@@ -1,5 +1,5 @@
 {
-  "Name": "tard",
+  "Name": "newnew",
   "Level": 1,
   "CantripsTotal": 4,
   "SpellsTotal": 2,
@@ -31,42 +31,42 @@
   ],
   "Cantrips": [
     {
-      "name": "Message",
+      "name": "Ray of Frost",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:message"
+      "url": "https://dnd5e.wikidot.com/spell:ray-of-frost"
     },
     {
-      "name": "Gust",
+      "name": "Thunderclap",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:gust"
+      "url": "https://dnd5e.wikidot.com/spell:thunderclap"
     },
     {
-      "name": "Minor Illusion",
+      "name": "Mind Sliver",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:minor-illusion"
+      "url": "https://dnd5e.wikidot.com/spell:mind-sliver"
     },
     {
-      "name": "Create Bonfire",
+      "name": "Green-Flame Blade",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:create-bonfire"
+      "url": "https://dnd5e.wikidot.com/spell:green-flame-blade"
     }
   ],
   "Spells": [
     {
-      "name": "Detect Magic",
+      "name": "Ray of Sickness",
       "level": 1,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:detect-magic"
+      "url": "https://dnd5e.wikidot.com/spell:ray-of-sickness"
     },
     {
-      "name": "Color Spray",
+      "name": "Tasha\u0027s Caustic Brew",
       "level": 1,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:color-spray"
+      "url": "https://dnd5e.wikidot.com/spell:tashas-caustic-brew"
     }
   ]
 }

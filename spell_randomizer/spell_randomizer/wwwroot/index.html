@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Sorcerer - Character Selection</title>
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <style>
+        .selection-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="selection-container">
+        <h1>Welcome, Sorcerer</h1>
+        
+        <div class="form-group">
+            <h2>Create New Character</h2>
+            <input type="text" id="new-character-name" placeholder="Enter character name">
+            <button id="create-button">Create & Play</button>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+            <h2>Load Existing Character</h2>
+            <select id="existing-characters">
+                <option value="">Select a character...</option>
+            </select>
+            <button id="load-button">Load & Play</button>
+        </div>
+    </div>
+
+    <script src="character-selection.js?v=1.1"></script>
+</body>
+</html>

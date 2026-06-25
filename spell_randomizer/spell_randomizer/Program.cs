@@ -1,21 +1,28 @@
-﻿namespace spell_randomizer;
+﻿using spell_randomizer;
 
-class Program {
-    static void Main()
-    {
-        var loadManager = new LoadManager();
-        var mig = loadManager.determineCharacter();
-        var inputManager = new InputManager(mig);
+var builder = WebApplication.CreateBuilder(args);
 
-        try
-        {
-            inputManager.play();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            mig.Save();
-            throw;
-        }
-    }
+// Add services to the container.
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new SpellConverter());
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
+
+app.UseHttpsRedirection();
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapControllers();
+
+app.Run();

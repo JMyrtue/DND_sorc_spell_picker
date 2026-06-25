@@ -1,0 +1,1356 @@
+{
+  "Version": 10,
+  "Cantrips": [
+    {
+      "name": "Acid Splash",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:acid-splash"
+    },
+    {
+      "name": "Blade Ward",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blade-ward"
+    },
+    {
+      "name": "Booming Blade",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:booming-blade"
+    },
+    {
+      "name": "Chill Touch",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:chill-touch"
+    },
+    {
+      "name": "Control Flames",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:control-flames"
+    },
+    {
+      "name": "Create Bonfire",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:create-bonfire"
+    },
+    {
+      "name": "Dancing Lights",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dancing-lights"
+    },
+    {
+      "name": "Fire Bolt",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fire-bolt"
+    },
+    {
+      "name": "Friends",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:friends"
+    },
+    {
+      "name": "Frostbite",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:frostbite"
+    },
+    {
+      "name": "Green-Flame Blade",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:green-flame-blade"
+    },
+    {
+      "name": "Gust",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:gust"
+    },
+    {
+      "name": "Infestation",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:infestation"
+    },
+    {
+      "name": "Light",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:light"
+    },
+    {
+      "name": "Lightning Lure",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:lightning-lure"
+    },
+    {
+      "name": "Mage Hand",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mage-hand"
+    },
+    {
+      "name": "Mending",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mending"
+    },
+    {
+      "name": "Message",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:message"
+    },
+    {
+      "name": "Mind Sliver",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mind-sliver"
+    },
+    {
+      "name": "Minor Illusion",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:minor-illusion"
+    },
+    {
+      "name": "Mold Earth",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mold-earth"
+    },
+    {
+      "name": "Poison Spray",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:poison-spray"
+    },
+    {
+      "name": "Prestidigitation",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:prestidigitation"
+    },
+    {
+      "name": "Ray of Frost",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:ray-of-frost"
+    },
+    {
+      "name": "Shape Water",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shape-water"
+    },
+    {
+      "name": "Shocking Grasp",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shocking-grasp"
+    },
+    {
+      "name": "Sword Burst",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sword-burst"
+    },
+    {
+      "name": "Thunderclap",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:thunderclap"
+    },
+    {
+      "name": "True Strike",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:true-strike"
+    }
+  ],
+  "Spells": [
+    {
+      "name": "Absorb Elements",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:absorb-elements"
+    },
+    {
+      "name": "Burning Hands",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:burning-hands"
+    },
+    {
+      "name": "Catapult",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:catapult"
+    },
+    {
+      "name": "Chaos Bolt",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:chaos-bolt"
+    },
+    {
+      "name": "Charm Person",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:charm-person"
+    },
+    {
+      "name": "Chromatic Orb",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:chromatic-orb"
+    },
+    {
+      "name": "Color Spray",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:color-spray"
+    },
+    {
+      "name": "Comprehend Languages",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:comprehend-languages"
+    },
+    {
+      "name": "Detect Magic",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:detect-magic"
+    },
+    {
+      "name": "Disguise Self",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:disguise-self"
+    },
+    {
+      "name": "Distort Value",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:distort-value"
+    },
+    {
+      "name": "Earth Tremor",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:earth-tremor"
+    },
+    {
+      "name": "Expeditious Retreat",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:expeditious-retreat"
+    },
+    {
+      "name": "False Life",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:false-life"
+    },
+    {
+      "name": "Feather Fall",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:feather-fall"
+    },
+    {
+      "name": "Fog Cloud",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fog-cloud"
+    },
+    {
+      "name": "Grease",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:grease"
+    },
+    {
+      "name": "Ice Knife",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:ice-knife"
+    },
+    {
+      "name": "Jump",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:jump"
+    },
+    {
+      "name": "Mage Armor",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mage-armor"
+    },
+    {
+      "name": "Magic Missile",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:magic-missile"
+    },
+    {
+      "name": "Ray of Sickness",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:ray-of-sickness"
+    },
+    {
+      "name": "Shield",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shield"
+    },
+    {
+      "name": "Silent Image",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:silent-image"
+    },
+    {
+      "name": "Silvery Barbs",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:silvery-barbs"
+    },
+    {
+      "name": "Sleep",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sleep"
+    },
+    {
+      "name": "Tasha\u0027s Caustic Brew",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tashas-caustic-brew"
+    },
+    {
+      "name": "Thunderwave",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:thunderwave"
+    },
+    {
+      "name": "Witch Bolt",
+      "level": 1,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:witch-bolt"
+    },
+    {
+      "name": "Aganazzar\u0027s Scorcher",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:aganazzars-scorcher"
+    },
+    {
+      "name": "Air Bubble",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:air-bubble"
+    },
+    {
+      "name": "Alter Self",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:alter-self"
+    },
+    {
+      "name": "Blindness/Deafness",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blindness-deafness"
+    },
+    {
+      "name": "Blur",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blur"
+    },
+    {
+      "name": "Cloud of Daggers",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:cloud-of-daggers"
+    },
+    {
+      "name": "Crown of Madness",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:crown-of-madness"
+    },
+    {
+      "name": "Darkness",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:darkness"
+    },
+    {
+      "name": "Darkvision",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:darkvision"
+    },
+    {
+      "name": "Detect Thoughts",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:detect-thoughts"
+    },
+    {
+      "name": "Dragon\u0027s Breath",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dragons-breath"
+    },
+    {
+      "name": "Dust Devil",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dust-devil"
+    },
+    {
+      "name": "Earthbind",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:earthbind"
+    },
+    {
+      "name": "Enhance Ability",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:enhance-ability"
+    },
+    {
+      "name": "Enlarge/Reduce",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:enlarge-reduce"
+    },
+    {
+      "name": "Flame Blade",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:flame-blade"
+    },
+    {
+      "name": "Flaming Sphere",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:flaming-sphere"
+    },
+    {
+      "name": "Gust of Wind",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:gust-of-wind"
+    },
+    {
+      "name": "Hold Person",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:hold-person"
+    },
+    {
+      "name": "Invisibility",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:invisibility"
+    },
+    {
+      "name": "Kinetic Jaunt",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:kinetic-jaunt"
+    },
+    {
+      "name": "Knock",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:knock"
+    },
+    {
+      "name": "Levitate",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:levitate"
+    },
+    {
+      "name": "Magic Weapon",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:magic-weapon"
+    },
+    {
+      "name": "Maximillian\u0027s Earthen Grasp",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:maximillians-earthen-grasp"
+    },
+    {
+      "name": "Mind Spike",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mind-spike"
+    },
+    {
+      "name": "Mirror Image",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mirror-image"
+    },
+    {
+      "name": "Misty Step",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:misty-step"
+    },
+    {
+      "name": "Nathair\u0027s Mischief",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:nathairs-mischief"
+    },
+    {
+      "name": "Phantasmal Force",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:phantasmal-force"
+    },
+    {
+      "name": "Pyrotechnics",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:pyrotechnics"
+    },
+    {
+      "name": "Rime\u0027s Binding Ice",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:rimes-binding-ice"
+    },
+    {
+      "name": "Scorching Ray",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:scorching-ray"
+    },
+    {
+      "name": "See Invisibility",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:see-invisibility"
+    },
+    {
+      "name": "Shadow Blade",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shadow-blade"
+    },
+    {
+      "name": "Shatter",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:shatter"
+    },
+    {
+      "name": "Snilloc\u0027s Snowball Swarm",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:snillocs-snowball-swarm"
+    },
+    {
+      "name": "Spider Climb",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:spider-climb"
+    },
+    {
+      "name": "Spray Of Cards",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:spray-of-cards"
+    },
+    {
+      "name": "Suggestion",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:suggestion"
+    },
+    {
+      "name": "Tasha\u0027s Mind Whip",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tashas-mind-whip"
+    },
+    {
+      "name": "Vortex Warp",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:vortex-warp"
+    },
+    {
+      "name": "Warding Wind",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:warding-wind"
+    },
+    {
+      "name": "Warp Sense",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:warp-sense"
+    },
+    {
+      "name": "Web",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:web"
+    },
+    {
+      "name": "Wither and Bloom",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wither-and-bloom"
+    },
+    {
+      "name": "Antagonize",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:antagonize"
+    },
+    {
+      "name": "Ashardalon\u0027s Stride",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:ashardalons-stride"
+    },
+    {
+      "name": "Blink",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blink"
+    },
+    {
+      "name": "Catnap",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:catnap"
+    },
+    {
+      "name": "Clairvoyance",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:clairvoyance"
+    },
+    {
+      "name": "Counterspell",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:counterspell"
+    },
+    {
+      "name": "Daylight",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:daylight"
+    },
+    {
+      "name": "Dispel Magic",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dispel-magic"
+    },
+    {
+      "name": "Enemies Abound",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:enemies-abound"
+    },
+    {
+      "name": "Erupting Earth",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:erupting-earth"
+    },
+    {
+      "name": "Fear",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fear"
+    },
+    {
+      "name": "Fireball",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fireball"
+    },
+    {
+      "name": "Flame Arrows",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:flame-arrows"
+    },
+    {
+      "name": "Fly",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fly"
+    },
+    {
+      "name": "Gaseous Form",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:gaseous-form"
+    },
+    {
+      "name": "Haste",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:haste"
+    },
+    {
+      "name": "Hypnotic Pattern",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:hypnotic-pattern"
+    },
+    {
+      "name": "Incite Greed",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:incite-greed"
+    },
+    {
+      "name": "Intellect Fortress",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:intellect-fortress"
+    },
+    {
+      "name": "Lightning Bolt",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:lightning-bolt"
+    },
+    {
+      "name": "Major Image",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:major-image"
+    },
+    {
+      "name": "Melf\u0027s Minute Meteors",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:melfs-minute-meteors"
+    },
+    {
+      "name": "Protection from Energy",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:protection-from-energy"
+    },
+    {
+      "name": "Sleet Storm",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sleet-storm"
+    },
+    {
+      "name": "Slow",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:slow"
+    },
+    {
+      "name": "Stinking Cloud",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:stinking-cloud"
+    },
+    {
+      "name": "Thunder Step",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:thunder-step"
+    },
+    {
+      "name": "Tidal Wave",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tidal-wave"
+    },
+    {
+      "name": "Tongues",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tongues"
+    },
+    {
+      "name": "Vampiric Touch",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:vampiric-touch"
+    },
+    {
+      "name": "Wall of Water",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wall-of-water"
+    },
+    {
+      "name": "Water Breathing",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:water-breathing"
+    },
+    {
+      "name": "Water Walk",
+      "level": 3,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:water-walk"
+    },
+    {
+      "name": "Banishment",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:banishment"
+    },
+    {
+      "name": "Blight",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blight"
+    },
+    {
+      "name": "Charm Monster",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:charm-monster"
+    },
+    {
+      "name": "Confusion",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:confusion"
+    },
+    {
+      "name": "Dimension Door",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dimension-door"
+    },
+    {
+      "name": "Dominate Beast",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dominate-beast"
+    },
+    {
+      "name": "Fire Shield",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fire-shield"
+    },
+    {
+      "name": "Gate Seal",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:gate-seal"
+    },
+    {
+      "name": "Greater Invisibility",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:greater-invisibility"
+    },
+    {
+      "name": "Ice Storm",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:ice-storm"
+    },
+    {
+      "name": "Polymorph",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:polymorph"
+    },
+    {
+      "name": "Raulothim\u0027s Psychic Lance",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:raulothims-psychic-lance"
+    },
+    {
+      "name": "Sickening Radiance",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sickening-radiance"
+    },
+    {
+      "name": "Spirit Of Death",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:spirit-of-death"
+    },
+    {
+      "name": "Stoneskin",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:stoneskin"
+    },
+    {
+      "name": "Storm Sphere",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:storm-sphere"
+    },
+    {
+      "name": "Vitriolic Sphere",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:vitriolic-sphere"
+    },
+    {
+      "name": "Wall of Fire",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wall-of-fire"
+    },
+    {
+      "name": "Watery Sphere",
+      "level": 4,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:watery-sphere"
+    },
+    {
+      "name": "Animate Objects",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:animate-objects"
+    },
+    {
+      "name": "Bigby\u0027s Hand",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:bigbys-hand"
+    },
+    {
+      "name": "Cloudkill",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:cloudkill"
+    },
+    {
+      "name": "Cone of Cold",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:cone-of-cold"
+    },
+    {
+      "name": "Control Winds",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:control-winds"
+    },
+    {
+      "name": "Creation",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:creation"
+    },
+    {
+      "name": "Dominate Person",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dominate-person"
+    },
+    {
+      "name": "Enervation",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:enervation"
+    },
+    {
+      "name": "Far Step",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:far-step"
+    },
+    {
+      "name": "Hold Monster",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:hold-monster"
+    },
+    {
+      "name": "Immolation",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:immolation"
+    },
+    {
+      "name": "Insect Plague",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:insect-plague"
+    },
+    {
+      "name": "Seeming",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:seeming"
+    },
+    {
+      "name": "Skill Empowerment",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:skill-empowerment"
+    },
+    {
+      "name": "Summon Draconic Spirit",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:summon-draconic-spirit"
+    },
+    {
+      "name": "Synaptic Static",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:synaptic-static"
+    },
+    {
+      "name": "Telekinesis",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:telekinesis"
+    },
+    {
+      "name": "Teleportation Circle",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:teleportation-circle"
+    },
+    {
+      "name": "Wall of Light",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wall-of-light"
+    },
+    {
+      "name": "Wall of Stone",
+      "level": 5,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wall-of-stone"
+    },
+    {
+      "name": "Arcane Gate",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:arcane-gate"
+    },
+    {
+      "name": "Chain Lightning",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:chain-lightning"
+    },
+    {
+      "name": "Circle of Death",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:circle-of-death"
+    },
+    {
+      "name": "Disintegrate",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:disintegrate"
+    },
+    {
+      "name": "Eyebite",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:eyebite"
+    },
+    {
+      "name": "Fizban\u0027s Platinum Shield",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fizbans-platinum-shield"
+    },
+    {
+      "name": "Flesh to Stone",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:flesh-to-stone"
+    },
+    {
+      "name": "Globe of Invulnerability",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:globe-of-invulnerability"
+    },
+    {
+      "name": "Investiture of Flame",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:investiture-of-flame"
+    },
+    {
+      "name": "Investiture of Ice",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:investiture-of-ice"
+    },
+    {
+      "name": "Investiture of Stone",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:investiture-of-stone"
+    },
+    {
+      "name": "Investiture of Wind",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:investiture-of-wind"
+    },
+    {
+      "name": "Mass Suggestion",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mass-suggestion"
+    },
+    {
+      "name": "Mental Prison",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mental-prison"
+    },
+    {
+      "name": "Move Earth",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:move-earth"
+    },
+    {
+      "name": "Otiluke\u0027s Freezing Sphere",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:otilukes-freezing-sphere"
+    },
+    {
+      "name": "Scatter",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:scatter"
+    },
+    {
+      "name": "Sunbeam",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sunbeam"
+    },
+    {
+      "name": "Tasha\u0027s Otherworldly Guise",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:tashas-otherworldly-guise"
+    },
+    {
+      "name": "True Seeing",
+      "level": 6,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:true-seeing"
+    },
+    {
+      "name": "Crown of Stars",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:crown-of-stars"
+    },
+    {
+      "name": "Delayed Blast Fireball",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:delayed-blast-fireball"
+    },
+    {
+      "name": "Draconic Transformation",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:draconic-transformation"
+    },
+    {
+      "name": "Dream of the Blue Veil",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dream-of-the-blue-veil"
+    },
+    {
+      "name": "Etherealness",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:etherealness"
+    },
+    {
+      "name": "Finger of Death",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:finger-of-death"
+    },
+    {
+      "name": "Fire Storm",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:fire-storm"
+    },
+    {
+      "name": "Plane Shift",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:plane-shift"
+    },
+    {
+      "name": "Power Word: Pain",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:power-word-pain"
+    },
+    {
+      "name": "Prismatic Spray",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:prismatic-spray"
+    },
+    {
+      "name": "Reverse Gravity",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:reverse-gravity"
+    },
+    {
+      "name": "Teleport",
+      "level": 7,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:teleport"
+    },
+    {
+      "name": "Abi-Dalzim\u0027s Horrid Wilting",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:abi-dalzims-horrid-wilting"
+    },
+    {
+      "name": "Demiplane",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:demiplane"
+    },
+    {
+      "name": "Dominate Monster",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:dominate-monster"
+    },
+    {
+      "name": "Earthquake",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:earthquake"
+    },
+    {
+      "name": "Incendiary Cloud",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:incendiary-cloud"
+    },
+    {
+      "name": "Power Word: Stun",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:power-word-stun"
+    },
+    {
+      "name": "Sunburst",
+      "level": 8,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:sunburst"
+    },
+    {
+      "name": "Blade of Disaster",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:blade-of-disaster"
+    },
+    {
+      "name": "Gate",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:gate"
+    },
+    {
+      "name": "Mass Polymorph",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:mass-polymorph"
+    },
+    {
+      "name": "Meteor Swarm",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:meteor-swarm"
+    },
+    {
+      "name": "Power Word: Kill",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:power-word-kill"
+    },
+    {
+      "name": "Psychic Scream",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:psychic-scream"
+    },
+    {
+      "name": "Time Stop",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:time-stop"
+    },
+    {
+      "name": "Wish",
+      "level": 9,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:wish"
+    }
+  ],
+  "SpellLevelBounds": [
+    29,
+    75,
+    108,
+    127,
+    147,
+    167,
+    179,
+    186,
+    194
+  ]
+}

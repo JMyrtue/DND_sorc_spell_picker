@@ -1,0 +1,72 @@
+{
+  "Name": "alfredo",
+  "Level": 1,
+  "CantripsTotal": 4,
+  "SpellsTotal": 2,
+  "SpellTableUpperBoundIndex": 34,
+  "WildMagicCounter": 1,
+  "SorcPointsUsed": 0,
+  "MaxSorcPoints": 0,
+  "SpellSlotsTotal": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpellSlotsUsed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Cantrips": [
+    {
+      "Name": "Thunderclap",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:thunderclap"
+    },
+    {
+      "Name": "Mending",
+      "Level": 0,
+      "Description": "Source: Player\u0027s Handbook\nTransmutation cantrip\nCasting Time: 1 minute\nRange: Touch\nComponents: V, S, M (two lodestones)\nDuration: Instantaneous\nThis spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.\nThis spell can physically repair a magic item or construct, but the spell can\u2019t restore magic to such an object.\nSpell Lists. Artificer, Bard, Cleric, Druid, Sorcerer, Wizard",
+      "Url": "https://dnd5e.wikidot.com/spell:mending"
+    },
+    {
+      "Name": "Mind Sliver",
+      "Level": 0,
+      "Description": "Source: Tasha\u0027s Cauldron of Everything\nEnchantment cantrip\nCasting Time: 1 action\nRange: 60 feet\nComponents: V\nDuration: 1 round\nYou drive a disorienting spike of psychic energy into the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take 1d6 psychic damage and subtract 1d4 from the next saving throw it makes before the end of your next turn.\nAt Higher Levels. This spell\u2019s damage increases by 1d6 when you reach certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).\nSpell Lists. Sorcerer (Optional), Warlock (Optional), Wizard (Optional)",
+      "Url": "https://dnd5e.wikidot.com/spell:mind-sliver"
+    },
+    {
+      "Name": "On/Off (UA)",
+      "Level": 0,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:on-off"
+    }
+  ],
+  "Spells": [
+    {
+      "Name": "Burning Hands",
+      "Level": 1,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:burning-hands"
+    },
+    {
+      "Name": "Disguise Self",
+      "Level": 1,
+      "Description": "",
+      "Url": "https://dnd5e.wikidot.com/spell:disguise-self"
+    }
+  ]
+}

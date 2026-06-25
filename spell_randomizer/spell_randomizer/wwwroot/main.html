@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Sorcerer Spell Picker</title>
+    <link rel="stylesheet" href="styles.css?v=1.2">
+</head>
+<body>
+    <div class="container">
+        <div id="character-sheet">
+            <div id="character-info">
+                <h1 id="character-name"></h1>
+                <p>Level: <span id="character-level"></span> 
+                    <button id="level-down-button">-</button>
+                    <button id="level-up-button">+</button>
+                </p>
+                <p>Sorcery Points: <span id="sorcery-points"></span></p>
+                <p class="wild-magic">Wild Magic Surge Threshold: <span id="wild-magic-counter"></span></p>
+            </div>
+
+            <div id="spell-slots">
+                <h2>Spell Slots</h2>
+                <!-- Spell slots will be dynamically generated here -->
+            </div>
+
+            <div id="spells-container">
+                <h2>Cantrips</h2>
+                <ul id="cantrip-list">
+                    <!-- Cantrips will be dynamically generated here -->
+                </ul>
+
+                <h2>Spells</h2>
+                <ul id="spell-list">
+                    <!-- Spells will be dynamically generated here -->
+                </ul>
+            </div>
+        </div>
+
+        <div id="controls">
+            <div id="actions">
+                <h2>Actions</h2>
+                <div id="cast-spell-buttons">
+                    <!-- "Cast" buttons will be dynamically generated here -->
+                </div>
+                <div>
+                    <input type="number" id="metamagic-cost" placeholder="Sorcery Points" min="1">
+                    <button id="metamagic-button">Use Metamagic</button>
+                </div>
+                <div>
+                    <button id="rest-button">Rest</button>
+                </div>
+            </div>
+
+            <div id="spell-description-container">
+                <h2>Spell Description</h2>
+                <div id="spell-description">
+                    <!-- Spell description will be shown here on hover -->
+                    <p>Hover over a spell to see its description.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wild Magic Surge Modal -->
+    <div id="surge-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <p id="surge-modal-text"></p>
+            <div class="modal-buttons">
+                <button id="surge-yes-button">Yes</button>
+                <button id="surge-no-button">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=1.1"></script>
+</body>
+</html>

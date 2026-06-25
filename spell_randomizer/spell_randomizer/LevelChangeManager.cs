@@ -1,29 +1,29 @@
-﻿using System.Reflection.Emit;
-using System.Security.Cryptography.X509Certificates;
+﻿namespace spell_randomizer;
 
 public class LevelChangeManager{
     
-    public LevelChangeManager()
-    {
+    private readonly MagicManager _magicManager;
 
+    public LevelChangeManager(MagicManager magicManager)
+    {
+        _magicManager = magicManager;
     }
 
     public int GetSpellsIndexUpperBound(int level)
     {
-        var indexUpperBound = level switch
-        {
-            1 or 2 => 34,                // 34 1st level spells
-            3 or 4 => 86,                // 52 2nd level spells
-            5 or 6 => 127,               // 41 3rd level spells
-            7 or 8 => 151,               // 24 4th level spells
-            9 or 10 => 175,              // 24 5th level spells
-            11 or 12 => 197,             // 22 6th level spells
-            13 or 14 => 210,             // 13 7th level spells
-            15 or 16 => 217,             // 7 8th level spells
-            17 or 18 or 19 or 20 => 225, // 8 9th level spells
-            _ => throw new Exception("Undefined level for determining index bound of spell retrieval"),
-        };
-        return indexUpperBound;
+        // Determine the maximum spell level a sorcerer of a given level can cast.
+        int maxSpellLevel;
+        if (level >= 17) maxSpellLevel = 9;
+        else if (level >= 15) maxSpellLevel = 8;
+        else if (level >= 13) maxSpellLevel = 7;
+        else if (level >= 11) maxSpellLevel = 6;
+        else if (level >= 9) maxSpellLevel = 5;
+        else if (level >= 7) maxSpellLevel = 4;
+        else if (level >= 5) maxSpellLevel = 3;
+        else if (level >= 3) maxSpellLevel = 2;
+        else maxSpellLevel = 1;
+
+        return _magicManager.GetSpellsIndexUpperBound(maxSpellLevel);
     }
 
     public int GetCantripsTotal(int level)
