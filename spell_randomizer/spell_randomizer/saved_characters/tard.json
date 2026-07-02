@@ -1,16 +1,16 @@
 {
   "Name": "tard",
-  "Level": 1,
-  "CantripsTotal": 4,
-  "SpellsTotal": 2,
-  "SpellTableUpperBoundIndex": 29,
+  "Level": 5,
+  "CantripsTotal": 5,
+  "SpellsTotal": 6,
+  "SpellTableUpperBoundIndex": 108,
   "WildMagicCounter": 1,
-  "SorcPointsUsed": 0,
-  "MaxSorcPoints": 0,
+  "SorcPointsUsed": -1,
+  "MaxSorcPoints": 5,
   "SpellSlotsTotal": [
+    4,
+    3,
     2,
-    0,
-    0,
     0,
     0,
     0,
@@ -19,8 +19,8 @@
     0
   ],
   "SpellSlotsUsed": [
-    0,
-    0,
+    2,
+    -1,
     0,
     0,
     0,
@@ -31,36 +31,60 @@
   ],
   "Cantrips": [
     {
-      "name": "Message",
+      "name": "Shape Water",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:message"
+      "url": "https://dnd5e.wikidot.com/spell:shape-water"
     },
     {
-      "name": "Gust",
+      "name": "Green-Flame Blade",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:gust"
+      "url": "https://dnd5e.wikidot.com/spell:green-flame-blade"
     },
     {
-      "name": "Minor Illusion",
+      "name": "Mind Sliver",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:minor-illusion"
+      "url": "https://dnd5e.wikidot.com/spell:mind-sliver"
     },
     {
-      "name": "Create Bonfire",
+      "name": "Light",
       "level": 0,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:create-bonfire"
+      "url": "https://dnd5e.wikidot.com/spell:light"
+    },
+    {
+      "name": "Thunderclap",
+      "level": 0,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:thunderclap"
     }
   ],
   "Spells": [
     {
-      "name": "Detect Magic",
+      "name": "Nathair\u0027s Mischief",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:nathairs-mischief"
+    },
+    {
+      "name": "Earth Tremor",
       "level": 1,
       "description": "",
-      "url": "https://dnd5e.wikidot.com/spell:detect-magic"
+      "url": "https://dnd5e.wikidot.com/spell:earth-tremor"
+    },
+    {
+      "name": "Snilloc\u0027s Snowball Swarm",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:snillocs-snowball-swarm"
+    },
+    {
+      "name": "Spray Of Cards",
+      "level": 2,
+      "description": "",
+      "url": "https://dnd5e.wikidot.com/spell:spray-of-cards"
     },
     {
       "name": "Color Spray",
@@ -68,5 +92,6 @@
       "description": "",
       "url": "https://dnd5e.wikidot.com/spell:color-spray"
     }
-  ]
+  ],
+  "HaveUsedSorcerousRestoration": true
 }

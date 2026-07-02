@@ -49,3 +49,4 @@ C:/Users/toyot/OneDrive/Dokumenter/Gitrepose/DND_sorc_spell_picker/spell_randomi
 /home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/obj/Debug/net8.0/scopedcss/bundle/spell_randomizer.styles.css
 /home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/bin/Debug/net8.0/saved_characters/newnew.json
 /home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/bin/Debug/net8.0/saved_characters/newnwew.json
+/home/jonathan/Documents/programming/DND_sorc_spell_picker/spell_randomizer/spell_randomizer/bin/Debug/net8.0/saved_characters/newnewn.json

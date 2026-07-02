@@ -161,6 +161,19 @@ namespace spell_randomizer.Controllers
             return Ok();
         }
 
+        [HttpPost("sorcerousrestoration")]
+        public IActionResult UseSorcerousRestoration()
+        {
+            if (_player == null) return BadRequest("No active character.");
+
+            var result = _player.SorcerousRestoration();
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+            return Ok();
+        }
+
         [HttpPost("convert/pointstoslots")]
         public IActionResult ConvertPointsToSlots([FromBody] ConversionRequest request)
         {

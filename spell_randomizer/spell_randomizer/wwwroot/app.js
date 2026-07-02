@@ -59,6 +59,26 @@ function updateCharacterInfo(data) {
     document.getElementById('character-level').textContent = data.level;
     document.getElementById('sorcery-points').textContent = data.remainingSorceryPoints;
     document.getElementById('wild-magic-counter').textContent = data.wildMagicCounter;
+
+    let sorcerousRestorationButton = document.getElementById('sorcerous-restoration-button');
+
+    // This feature is available at level 5+ according to Player.cs
+    if (data.level >= 5) {
+        if (!sorcerousRestorationButton) {
+            sorcerousRestorationButton = document.createElement('button');
+            sorcerousRestorationButton.id = 'sorcerous-restoration-button';
+            sorcerousRestorationButton.textContent = 'Use Sorcerous Restoration';
+            sorcerousRestorationButton.addEventListener('click', useSorcerousRestoration);
+
+            const metamagicButton = document.getElementById('metamagic-button');
+            if (metamagicButton) {
+                metamagicButton.after(sorcerousRestorationButton);
+            }
+        }
+        sorcerousRestorationButton.style.display = 'inline-block';
+    } else if (sorcerousRestorationButton) {
+        sorcerousRestorationButton.style.display = 'none';
+    }
 }
 
 function updateCantrips(cantrips) {
@@ -270,6 +290,20 @@ async function levelDown() {
         }
     } catch (error) {
         console.error('Error leveling down:', error);
+    }
+}
+
+async function useSorcerousRestoration() {
+    try {
+        const response = await fetch('/api/sorcerousrestoration', { method: 'POST' });
+        if (response.ok) {
+            fetchCharacterData();
+        } else {
+            const error = await response.text();
+            alert(`Error: ${error}`);
+        }
+    } catch (error) {
+        console.error('Error using Sorcerous Restoration:', error);
     }
 }
 

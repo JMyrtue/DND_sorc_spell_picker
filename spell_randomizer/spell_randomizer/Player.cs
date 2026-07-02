@@ -15,6 +15,8 @@ public class Player {
     public int[] SpellSlotsUsed { get; set; }
     public List<Spell> Cantrips { get; set; }
     public List<Spell> Spells { get; set; }
+    
+    public Boolean HaveUsedSorcerousRestoration { get; set; }
 
     private Random _randomizer;
     private MagicManager _magicManager;
@@ -87,6 +89,7 @@ public class Player {
         WildMagicCounter = 1;
         SorcPointsUsed = 0;
         ResetSpellSlots();
+        HaveUsedSorcerousRestoration = false;
     }
 
 
@@ -127,34 +130,38 @@ public class Player {
 
     public ActionResult FlexCast_PointsToSlots(int spellSlot)
     {
+        if (Level < 2)
+        {
+            return new ActionResult(false, "Level not high enough for conversion");
+        }
+        
         var sorcPointsNeeded = SlotToPointConversion(spellSlot);
-
+        
         if( sorcPointsNeeded > (MaxSorcPoints - SorcPointsUsed) )
         {
             return new ActionResult(false, "Not enough Sorcery Points for the conversion");
-        } else
-        {
-            SorcPointsUsed += sorcPointsNeeded;
-            SpellSlotsUsed[spellSlot - 1]--;
-            return new ActionResult(true, $"{sorcPointsNeeded} sorcery points converted to level {spellSlot} spellslot!");
-        }
+        } 
+        SorcPointsUsed += sorcPointsNeeded;
+        SpellSlotsUsed[spellSlot - 1]--;
+        return new ActionResult(true, $"{sorcPointsNeeded} sorcery points converted to level {spellSlot} spellslot!");
 
     }
 
     public ActionResult FlexCast_SlotsToPoints(int spellSlot)
     {
+        if (Level < 2)
+        {
+            return new ActionResult(false, "Level not high enough for conversion");
+        }
 
         if (SpellSlotsUsed[spellSlot - 1] >= SpellSlotsTotal[spellSlot - 1])
         {
             return new ActionResult(false, $"No spellslots left of level {spellSlot} - conversion cancelled");
         }
-        else
-        {
-            SpellSlotsUsed[spellSlot - 1]++;
-            var sorcPoints = SlotToPointConversion(spellSlot);
-            SorcPointsUsed -= sorcPoints;
-            return new ActionResult(true, $"Level {spellSlot} spellslot converted to {sorcPoints} sorcery points!");
-        }
+        SpellSlotsUsed[spellSlot - 1]++;
+        var sorcPoints = SlotToPointConversion(spellSlot);
+        SorcPointsUsed -= sorcPoints;
+        return new ActionResult(true, $"Level {spellSlot} spellslot converted to {sorcPoints} sorcery points!");
     }
 
     public ActionResult MetaMagic(int sorcPointsCost)
@@ -168,10 +175,25 @@ public class Player {
         {
             SorcPointsUsed += sorcPointsCost;
              return new ActionResult(true, "Metamagic used");
-        } else
+        } 
+        return new ActionResult(false, "Not enough Sorcery Points for the particular Metamagic");
+    }
+
+    public ActionResult SorcerousRestoration()
+    {
+        if (Level < 5)
         {
-            return new ActionResult(false, "Not enough Sorcery Points for the particular Metamagic");
+            return new ActionResult(false, "Level not high enough for sorcerous restoration");
         }
+
+        if (HaveUsedSorcerousRestoration)
+        {
+            return new ActionResult(false, "Must longrest before sorcerous restoration is available again");
+        }
+
+        SorcPointsUsed -= (int)Math.Floor(Level / 2.0);
+        HaveUsedSorcerousRestoration = true;
+        return new ActionResult(true, "Sorcerous restoration used");
     }
 
     public void Save()
